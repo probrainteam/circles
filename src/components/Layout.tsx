@@ -19,8 +19,9 @@ const LayoutWrapper = styled.div`
   display: flex;
 `;
 
-const BodyContent = styled.div`
+const BodyContent = styled.main`
   width: 100%;
+  padding: 50px;
 `;
 
 export default Layout;
