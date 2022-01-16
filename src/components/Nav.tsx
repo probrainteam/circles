@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
-import Clock from "react-live-clock";
 
 import {
   IoReorderFourOutline,
@@ -25,9 +24,9 @@ const Nav = () => {
       </Icons>
 
       <Today>
-        {/* <Clock format={"YYYY년"} interval={1000} ticking={true} />
-        <Clock format={"MM월 DD일 dddd"} interval={1000} ticking={true} />
-        <Clock format={"h : mm A"} interval={1000} ticking={true} /> */}
+        <div>2022년</div>
+        <div>01월 12일 수요일</div>
+        <div>01 : 20 PM</div>
         <div>
           <CrueName>{crueName}</CrueName> 입니다.
         </div>
@@ -114,10 +113,12 @@ const CrueName = styled.span`
 `;
 
 const NavContainer = styled.div`
-  /* box-shadow: 4px 12px 30px 6px rgba(0, 0, 0, 0.09); */
+  top: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  /* height: 100vh; */
   width: 284px;
   min-width: 284px;
   padding: 30px 30px 30px 20px;

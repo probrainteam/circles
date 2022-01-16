@@ -8,6 +8,8 @@ import "tui-calendar/dist/tui-calendar.css";
 import "tui-date-picker/dist/tui-date-picker.css";
 import "tui-time-picker/dist/tui-time-picker.css";
 
+import TodoList from "../components/TodoList";
+
 const Home = () => {
   const navigation = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(true); // 이후 store로 관리
@@ -25,7 +27,10 @@ const Home = () => {
         </Text>
       </Title>
 
+      {/* // TODO : 이후 Week단위 task 캘린더 직접 구현 -- 날짜 개념이 추가된 투두리스트 */}
       <Calendar height="600px" defaultView="week" scheduleView />
+
+      <TodoList />
     </Layout>
   );
 };
