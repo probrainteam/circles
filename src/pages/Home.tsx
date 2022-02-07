@@ -1,14 +1,14 @@
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Layout from "../components/Layout";
 
 import Calendar from "@toast-ui/react-calendar";
 import "tui-calendar/dist/tui-calendar.css";
 import "tui-date-picker/dist/tui-date-picker.css";
 import "tui-time-picker/dist/tui-time-picker.css";
 
-import TodoList from "../components/TodoList";
+import Layout from "components/Layout";
+import TodoList from "components/ui/organisms/TodoList";
 
 const Home = () => {
   const navigation = useNavigate();

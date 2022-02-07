@@ -1,18 +1,17 @@
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
-
-import TextInput from "../components/TextInput";
-import ErrorMsg from "../components/ErrorMsg";
-import Logo from "../components/Logo";
-import Button from "../components/Button";
+import TextInput from "components/ui/atoms/TextInput";
+import ErrorMsg from "components/ui/atoms/ErrorMsg";
+import Logo from "components/ui/atoms/Logo";
+import Button from "components/ui/atoms/Button";
 
 const Regist = () => {
   const [inputId, setInputId] = useState<string>();
   const [inputPw, setInputPw] = useState<string>();
   const [errorMsg, setErrorMsg] = useState<string>();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const {
       target: { name, value },
     } = e;

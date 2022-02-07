@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
-import Nav from "../components/Nav";
-import TextInput from "../components/TextInput";
-import ErrorMsg from "../components/ErrorMsg";
-import Logo from "../components/Logo";
-import Button from "../components/Button";
-import { useNavigate } from "react-router-dom";
+import TextInput from "components/ui/atoms/TextInput";
+import ErrorMsg from "components/ui/atoms/ErrorMsg";
+import Logo from "components/ui/atoms/Logo";
+import Button from "components/ui/atoms/Button";
 
 const Login = () => {
   const navigation = useNavigate();
@@ -14,12 +13,10 @@ const Login = () => {
   const [inputPw, setInputPw] = useState<string>();
   const [errorMsg, setErrorMsg] = useState<string>();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const {
       target: { name, value },
     } = e;
-
-    console.log(name, value);
 
     if (name === "inputId") setInputId(value);
     else if (name === "inputPw") setInputPw(value);
@@ -29,14 +26,6 @@ const Login = () => {
     console.log("click login");
     setErrorMsg("error");
   };
-
-  // TODO : Auth useEffect
-  useEffect(() => {
-    console.log("login page mount");
-    return () => {
-      console.log("login page unmount");
-    };
-  }, []);
 
   return (
     <LoginWrapper className="login">

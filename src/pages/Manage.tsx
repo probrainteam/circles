@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import Layout from "../components/Layout";
+import Layout from "components/Layout";
 
 const Manage = () => {
   return (

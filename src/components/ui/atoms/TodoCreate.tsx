@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
-import { useAppDispatch } from "../../hooks/redux-hooks";
-import { add } from "../../modules/todoSlice";
+import { useAppDispatch } from "hooks/redux-hooks";
+import { add } from "features/todoSlice";
 
 const TodoCreate = () => {
   const [todoText, setTodoText] = useState("");

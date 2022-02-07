@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import GlobalStyle from "../GlobalStyle";
-import Home from "../pages/Home";
-import Login from "../pages/Login";
-import Manage from "../pages/Manage";
-import Regist from "../pages/Regist";
+import GlobalStyle from "GlobalStyle";
+import Home from "pages/Home";
+import Login from "pages/Login";
+import Manage from "pages/Manage";
+import Regist from "pages/Regist";
 
 const App = () => {
   return (

@@ -1,11 +1,10 @@
 import styled from "@emotion/styled";
-import { useAppSelector } from "../../hooks/redux-hooks";
-import TodoItem from "./TodoItem";
+import { useAppSelector } from "hooks/redux-hooks";
+import TodoItem from "components/ui/atoms/TodoItem";
 
 const TodoContent = () => {
   const todos = useAppSelector((state) => state.todos);
 
-  console.log(todos);
   return (
     <TodoContentWrapper>
       {todos.map((todo) => (

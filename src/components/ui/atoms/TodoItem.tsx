@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { MdDone, MdDelete } from "react-icons/md";
-import { useAppDispatch } from "../../hooks/redux-hooks";
-import { remove, toggle } from "../../modules/todoSlice";
+import { useAppDispatch } from "hooks/redux-hooks";
+import { remove, toggle } from "features/todoSlice";
 
 interface TodoItemProps extends DoneType {
   id: number;
@@ -34,11 +34,12 @@ const Remove = styled.div`
   justify-content: center;
   color: #dee2e6;
   font-size: 22px;
+  display: none;
   cursor: pointer;
+
   &:hover {
     color: #ff6b6b;
   }
-  display: none;
 `;
 
 const TodoItemBlock = styled.div`
@@ -46,6 +47,7 @@ const TodoItemBlock = styled.div`
   align-items: center;
   padding-top: 12px;
   padding-bottom: 12px;
+
   &:hover {
     .icon-remove {
       display: initial;
@@ -57,7 +59,6 @@ const CheckCircle = styled.div<DoneType>`
   width: 32px;
   height: 32px;
   border-radius: 16px;
-
   font-size: 24px;
   display: flex;
   align-items: center;
