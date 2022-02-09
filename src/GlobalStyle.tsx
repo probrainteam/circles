@@ -38,8 +38,8 @@ const defaultStyle = css`
   }
 `;
 
-const GlobalStyle: FunctionComponent = () => {
+function GlobalStyle() {
   return <Global styles={defaultStyle} />;
-};
+}
 
 export default GlobalStyle;

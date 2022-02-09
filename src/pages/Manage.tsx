@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import Layout from "components/Layout";
 
-const Manage = () => {
+function Manage() {
   return (
     <Layout>
       <ManageWrapper>
@@ -9,7 +9,7 @@ const Manage = () => {
       </ManageWrapper>
     </Layout>
   );
-};
+}
 
 const ManageWrapper = styled.div`
   display: flex;

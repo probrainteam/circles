@@ -5,9 +5,9 @@ interface ContentHeaderProps {
   children: ReactNode;
 }
 
-const ContentHeader = ({ children }: ContentHeaderProps) => {
+function ContentHeader({ children }: ContentHeaderProps) {
   return <ContentHeaderWrapper>{children}</ContentHeaderWrapper>;
-};
+}
 
 const ContentHeaderWrapper = styled.div`
   padding-top: 32px;

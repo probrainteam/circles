@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
-
 import {
   IoReorderFourOutline,
   IoHomeOutline,
@@ -14,7 +13,7 @@ import {
   IoAtCircleSharp,
 } from "react-icons/io5";
 
-const Nav = () => {
+function Nav() {
   const [crueName, setCrueName] = useState("PROBRAIN");
   return (
     <NavContainer>
@@ -63,7 +62,7 @@ const Nav = () => {
       </Footer>
     </NavContainer>
   );
-};
+}
 
 const Icons = styled.div`
   display: grid;

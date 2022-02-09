@@ -5,10 +5,10 @@ interface ErrorMsgProps {
   children: ReactNode;
 }
 
-const ErrorMsg = ({ children }: ErrorMsgProps) => {
+function ErrorMsg({ children }: ErrorMsgProps) {
   // FIXME: 이후 error 메시지 toast 메시지로 수정
   return <Error>{children}</Error>;
-};
+}
 
 const Error = styled.div`
   color: red;

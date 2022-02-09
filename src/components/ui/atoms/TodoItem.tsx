@@ -12,7 +12,7 @@ interface DoneType {
   done: boolean;
 }
 
-const TodoItem = ({ id, done, text }: TodoItemProps) => {
+function TodoItem({ id, done, text }: TodoItemProps) {
   const dispatch = useAppDispatch();
 
   return (
@@ -26,7 +26,7 @@ const TodoItem = ({ id, done, text }: TodoItemProps) => {
       </Remove>
     </TodoItemBlock>
   );
-};
+}
 
 const Remove = styled.div`
   display: flex;

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useAppDispatch } from "hooks/redux-hooks";
 import { add } from "features/todoSlice";
 
-const TodoCreate = () => {
+function TodoCreate() {
   const [todoText, setTodoText] = useState("");
 
   const dispatch = useAppDispatch();
@@ -28,7 +28,7 @@ const TodoCreate = () => {
       />
     </InsertForm>
   );
-};
+}
 
 const InsertForm = styled.form`
   padding-left: 32px;

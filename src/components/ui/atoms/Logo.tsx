@@ -5,9 +5,9 @@ interface LogoProps {
   children: ReactNode;
 }
 
-const Logo = ({ children }: LogoProps) => {
+function Logo({ children }: LogoProps) {
   return <LogoWrapper>{children}</LogoWrapper>;
-};
+}
 
 const LogoWrapper = styled.div`
   font-size: 70px;

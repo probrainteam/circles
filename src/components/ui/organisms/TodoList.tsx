@@ -3,7 +3,7 @@ import TodoContent from "components/ui/molecules/TodoContent";
 import TodoCreate from "components/ui/atoms/TodoCreate";
 import TodoHeader from "components/ui/molecules/ContentHeader";
 
-const TodoList = () => {
+function TodoList() {
   return (
     <TodoBox>
       <TodoHeader>TODOLIST</TodoHeader>
@@ -11,6 +11,6 @@ const TodoList = () => {
       <TodoContent />
     </TodoBox>
   );
-};
+}
 
 export default TodoList;

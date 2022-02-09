@@ -5,9 +5,9 @@ interface TodoBoxProps {
   children: ReactNode;
 }
 
-const TodoBox = ({ children }: TodoBoxProps) => {
+function TodoBox({ children }: TodoBoxProps) {
   return <TodoBoxWrapper>{children}</TodoBoxWrapper>;
-};
+}
 
 const TodoBoxWrapper = styled.div`
   width: 512px;

@@ -9,14 +9,14 @@ interface TextInputProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const TextInput = ({
+function TextInput({
   type,
   placeholder,
   className,
   name,
   value,
   onChange,
-}: TextInputProps) => {
+}: TextInputProps) {
   return (
     <TextField
       type={type}
@@ -27,7 +27,7 @@ const TextInput = ({
       onChange={onChange}
     />
   );
-};
+}
 
 const TextField = styled.input`
   margin-bottom: 10px;

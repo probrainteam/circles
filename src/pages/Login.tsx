@@ -7,7 +7,7 @@ import ErrorMsg from "components/ui/atoms/ErrorMsg";
 import Logo from "components/ui/atoms/Logo";
 import Button from "components/ui/atoms/Button";
 
-const Login = () => {
+function Login() {
   const navigation = useNavigate();
   const [inputId, setInputId] = useState<string>();
   const [inputPw, setInputPw] = useState<string>();
@@ -59,7 +59,7 @@ const Login = () => {
       </LoginInner>
     </LoginWrapper>
   );
-};
+}
 
 const appear = keyframes`
     0% {

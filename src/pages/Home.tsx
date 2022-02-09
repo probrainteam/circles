@@ -9,8 +9,9 @@ import "tui-time-picker/dist/tui-time-picker.css";
 
 import Layout from "components/Layout";
 import TodoList from "components/ui/organisms/TodoList";
+import Welcome from "components/ui/atoms/Welcome";
 
-const Home = () => {
+function Home() {
   const navigation = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(true); // 이후 store로 관리
 
@@ -20,12 +21,7 @@ const Home = () => {
 
   return (
     <Layout>
-      <Title>
-        <Text>환영합니다.</Text>
-        <Text>
-          오늘의 <CrueName>PROBRAIN</CrueName> 소식입니다. 😁
-        </Text>
-      </Title>
+      <Welcome />
 
       {/* // TODO : 이후 Week단위 task 캘린더 직접 구현 -- 날짜 개념이 추가된 투두리스트 */}
       <Calendar height="600px" defaultView="week" scheduleView />
@@ -33,19 +29,6 @@ const Home = () => {
       <TodoList />
     </Layout>
   );
-};
-
-const Title = styled.div`
-  margin-bottom: 40px;
-`;
-
-const Text = styled.div`
-  font-size: 40px;
-  font-weight: 100;
-`;
-
-const CrueName = styled.span`
-  font-weight: 500;
-`;
+}
 
 export default Home;

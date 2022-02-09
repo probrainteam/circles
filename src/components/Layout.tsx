@@ -6,14 +6,14 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+function Layout({ children }: LayoutProps) {
   return (
     <LayoutWrapper>
       <Nav />
       <BodyContent>{children}</BodyContent>
     </LayoutWrapper>
   );
-};
+}
 
 const LayoutWrapper = styled.div`
   display: flex;

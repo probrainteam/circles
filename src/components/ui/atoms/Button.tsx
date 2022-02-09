@@ -8,13 +8,13 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-const Button = ({ type, className, onClick, children }: ButtonProps) => {
+function Button({ type, className, onClick, children }: ButtonProps) {
   return (
     <ButtonWrapper type={type} className={className} onClick={onClick}>
       {children}
     </ButtonWrapper>
   );
-};
+}
 
 const ButtonWrapper = styled.button`
   background-color: ${({ color }) => color};
