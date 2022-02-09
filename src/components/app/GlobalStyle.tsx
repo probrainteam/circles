@@ -1,4 +1,3 @@
-import { FunctionComponent } from "react";
 import { Global, css } from "@emotion/react";
 
 const defaultStyle = css`

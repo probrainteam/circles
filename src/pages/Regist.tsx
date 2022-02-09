@@ -1,10 +1,10 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
-import TextInput from "components/ui/atoms/TextInput";
-import ErrorMsg from "components/ui/atoms/ErrorMsg";
-import Logo from "components/ui/atoms/Logo";
-import Button from "components/ui/atoms/Button";
+import TextInput from "components/atoms/TextInput";
+import ErrorMsg from "components/atoms/ErrorMsg";
+import Logo from "components/atoms/Logo";
+import Button from "components/atoms/Button";
 
 function Regist() {
   const [inputId, setInputId] = useState<string>();

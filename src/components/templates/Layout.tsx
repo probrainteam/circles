@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import styled from "@emotion/styled";
-import Nav from "components/ui/organisms/Nav";
+import Nav from "components/organisms/Nav";
 
 interface LayoutProps {
   children: ReactNode;
