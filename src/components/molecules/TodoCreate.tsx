@@ -1,27 +1,28 @@
 import styled from "@emotion/styled";
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { useAppDispatch } from "hooks/redux-hooks";
 import { add } from "features/todoSlice";
+import Input from "components/atoms/Input";
 
 function TodoCreate() {
   const [todoText, setTodoText] = useState("");
 
   const dispatch = useAppDispatch();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(add(todoText));
     setTodoText("");
   };
 
-  const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleTextChange = (e: ChangeEvent<HTMLInputElement>) => {
     setTodoText(e.target.value);
   };
 
   return (
     <InsertForm onSubmit={handleSubmit}>
       <Input
-        autoFocus
+        className="normal-input"
         placeholder="할 일을 입력 후, Enter 를 누르세요"
         onChange={handleTextChange}
         value={todoText}
@@ -31,21 +32,10 @@ function TodoCreate() {
 }
 
 const InsertForm = styled.form`
-  padding-left: 32px;
-  padding-top: 32px;
-  padding-right: 32px;
-
-  border-top: 1px solid #e9ecef;
-`;
-
-const Input = styled.input`
-  padding: 14px;
-  border-radius: 10px;
-  border: none;
-  background-color: #f5f5f5;
-  width: 100%;
-  outline: none;
-  font-size: 18px;
+  padding-left: 3.2rem;
+  padding-top: 3.2rem;
+  padding-right: 3.2rem;
+  border-top: 0.1rem solid #e9ecef;
 `;
 
 export default TodoCreate;

@@ -22,6 +22,7 @@ const LayoutWrapper = styled.div`
 const BodyContent = styled.main`
   width: 100%;
   padding: 50px;
+  padding-left: 320px;
 `;
 
 export default Layout;

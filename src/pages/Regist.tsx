@@ -1,7 +1,7 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
-import TextInput from "components/atoms/TextInput";
+import Input from "components/atoms/Input";
 import ErrorMsg from "components/atoms/ErrorMsg";
 import Logo from "components/atoms/Logo";
 import Button from "components/atoms/Button";
@@ -38,36 +38,36 @@ function Regist() {
   return (
     <RegistWrapper className="regist">
       <RegistInner>
-        <Logo>Circles</Logo>
+        <Logo className="auth">Circles</Logo>
 
         <form onSubmit={handleLoginClick}>
-          <TextInput
+          <Input
             placeholder="아이디를 입력해주세요"
-            className="text-field--id"
+            className="auth-input"
             name="id"
             value={inputId}
             onChange={handleInputChange}
           />
-          <TextInput
+          <Input
             type="password"
             placeholder={"비밀번호를 입력해주세요"}
-            className="text-field--pw"
+            className="auth-input"
             name="pw"
             value={inputPw}
             onChange={handleInputChange}
           />
-          <TextInput
+          <Input
             type="password"
             placeholder={"다시 한번 비밀번호를 입력해주세요"}
-            className="text-field--pw"
+            className="auth-input"
             name="pw"
             value={inputPw}
             onChange={handleInputChange}
           />
-          <TextInput
+          <Input
             type="password"
             placeholder={"공개 키를 입력해주세요"}
-            className="text-field--pw"
+            className="auth-input"
             name="pw"
             value={inputPw}
             onChange={handleInputChange}

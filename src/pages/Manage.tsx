@@ -1,12 +1,11 @@
 import styled from "@emotion/styled";
+import Recruit from "components/organisms/Recruit";
 import Layout from "components/templates/Layout";
 
 function Manage() {
   return (
     <Layout>
-      <ManageWrapper>
-        <h1>manage</h1>
-      </ManageWrapper>
+      <Recruit />
     </Layout>
   );
 }

@@ -2,13 +2,14 @@ import { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
-import TextInput from "components/atoms/TextInput";
+import Input from "components/atoms/Input";
 import ErrorMsg from "components/atoms/ErrorMsg";
 import Logo from "components/atoms/Logo";
 import Button from "components/atoms/Button";
 
 function Login() {
   const navigation = useNavigate();
+
   const [inputId, setInputId] = useState<string>();
   const [inputPw, setInputPw] = useState<string>();
   const [errorMsg, setErrorMsg] = useState<string>();
@@ -30,20 +31,20 @@ function Login() {
   return (
     <LoginWrapper className="login">
       <LoginInner>
-        <Logo>Circles</Logo>
+        <Logo className="auth">Circles</Logo>
 
         <form onSubmit={handleLoginClick}>
-          <TextInput
+          <Input
             placeholder="아이디를 입력해주세요"
-            className="text-field--id"
+            className="auth-input"
             name="id"
             value={inputId}
             onChange={handleInputChange}
           />
-          <TextInput
+          <Input
             type="password"
             placeholder={"비밀번호를 입력해주세요"}
-            className="text-field--pw"
+            className="auth-input"
             name="pw"
             value={inputPw}
             onChange={handleInputChange}

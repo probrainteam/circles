@@ -15,6 +15,10 @@ const defaultStyle = css`
     height: 100%;
   }
 
+  html {
+    font-size: 10px;
+  }
+
   body {
     min-height: 100vh;
     display: flex;

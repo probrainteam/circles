@@ -1,12 +1,16 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-function Welcome() {
+interface WelcomeProps {
+  circleName?: string;
+}
+
+function Welcome({ circleName }: WelcomeProps) {
   return (
     <Title>
       <Text>환영합니다.</Text>
       <Text>
-        오늘의 <CrueName>PROBRAIN</CrueName> 소식입니다. 😁
+        오늘의 <CircleName>{circleName}</CircleName> 소식입니다. 😁
       </Text>
     </Title>
   );
@@ -21,7 +25,7 @@ const Text = styled.div`
   font-weight: 100;
 `;
 
-const CrueName = styled.span`
+const CircleName = styled.span`
   font-weight: 500;
 `;
 
