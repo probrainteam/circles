@@ -1,12 +1,20 @@
 import React, { ReactNode } from "react";
 import styled from "@emotion/styled";
+import ContentHeader from "components/atoms/ContentHeader";
+
 interface ContentBoxProps {
   children: ReactNode;
+  title: string;
   className?: string;
 }
 
-function ContentContainer({ children }: ContentBoxProps) {
-  return <ContentBoxWrapper>{children}</ContentBoxWrapper>;
+function ContentContainer({ children, title }: ContentBoxProps) {
+  return (
+    <ContentBoxWrapper>
+      <ContentHeader>{title}</ContentHeader>
+      {children}
+    </ContentBoxWrapper>
+  );
 }
 const ContentBoxWrapper = styled.div`
   height: 100%;

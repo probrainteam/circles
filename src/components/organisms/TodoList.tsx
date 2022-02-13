@@ -1,14 +1,12 @@
 import TodoContent from "components/molecules/TodoContent";
 import TodoCreate from "components/molecules/TodoCreate";
-import ContentHeader from "components/atoms/ContentHeader";
 import styled from "@emotion/styled";
 import ContentContainer from "components/atoms/ContentContainer";
 
 function TodoList() {
   return (
     <TodoBoxWrapper>
-      <ContentContainer>
-        <ContentHeader>TODOLIST</ContentHeader>
+      <ContentContainer title="TODOLIST">
         <TodoCreate />
         <TodoContent />
       </ContentContainer>
