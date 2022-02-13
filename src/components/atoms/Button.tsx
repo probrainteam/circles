@@ -52,9 +52,9 @@ const ButtonWrapper = styled.button<ButtonType>`
   margin: 8px 0;
 
   &.btn--recruit {
-    height: 100%;
+    height: fit-content;
     margin: 0;
-    padding: 0 40px;
+    padding: 1.4rem 40px;
     border-radius: 30px;
   }
 `;

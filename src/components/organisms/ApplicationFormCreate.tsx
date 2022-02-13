@@ -23,7 +23,7 @@ function ApplicationFormCreate() {
       </ButtonContainer>
       <InputContainer>
         <Input
-          className="normal-input"
+          className="normal-input input--recruit"
           placeholder="가입신청서 만들기 버튼을 누르면 URL이 나타납니다."
           value={applicationFormUrl}
         ></Input>
@@ -35,9 +35,11 @@ const ApplicationFormContainer = styled.div`
   margin: 25px 0;
   display: flex;
   gap: 10px;
+  // height: 45px;
 `;
 const ButtonContainer = styled.div``;
 const InputContainer = styled.div`
+  // height: 45px;
   flex-grow: 1;
 `;
 

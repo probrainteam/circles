@@ -46,12 +46,17 @@ const TextField = styled.input`
 
   &.normal-input {
     font-size: 1.8rem;
-    padding: 1.4rem;
+    // padding: 1.4rem;
+    padding: 1.4rem 40px;
+
     border-radius: 1rem;
     border: none;
     background-color: #f5f5f5;
     width: 100%;
     outline: none;
+  }
+  &.input--recruit {
+    border-radius: 3rem;
   }
 `;
 
