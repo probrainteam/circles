@@ -6,6 +6,7 @@ interface InputProps {
   className?: string;
   name?: string;
   value: string | undefined;
+  readOnly?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -16,6 +17,7 @@ function Input({
   name,
   value,
   onChange,
+  readOnly,
 }: InputProps) {
   return (
     <TextField
@@ -25,6 +27,7 @@ function Input({
       name={name}
       value={value}
       onChange={onChange}
+      readOnly={readOnly}
     />
   );
 }
