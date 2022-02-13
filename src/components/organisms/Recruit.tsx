@@ -2,7 +2,6 @@ import React from "react";
 import SectionTitle from "../atoms/SectionTitle";
 import ApplicationFormCreate from "./ApplicationFormCreate";
 import ContentContainer from "components/atoms/ContentContainer";
-import DataTable from "components/molecules/DataTable";
 import NewRecruit from "./NewRecruit";
 
 function Recruit() {

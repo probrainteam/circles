@@ -1,6 +1,5 @@
 import React from "react";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
-import DataTable from "components/molecules/DataTable";
 import styled from "@emotion/styled";
 
 interface NewRecruitProps {
@@ -9,13 +8,13 @@ interface NewRecruitProps {
 
 function NewRecruit() {
   const columns: GridColDef[] = [
-    { field: "id", headerName: "ID", width: 70 },
+    { field: "id", headerName: "ID", width: 100 },
     { field: "name", headerName: "이름", width: 150 },
-    { field: "studentId", headerName: "학번", width: 150 },
-    { field: "phone", headerName: "전화번호", width: 150 },
-    { field: "grade", headerName: "학년", width: 70 },
-    { field: "isDues", headerName: "회비 여부", width: 150 },
-    { field: "state", headerName: "상태", width: 130 },
+    { field: "studentId", headerName: "학번", width: 160 },
+    { field: "phone", headerName: "전화번호", width: 160 },
+    { field: "grade", headerName: "학년", width: 100 },
+    { field: "isDues", headerName: "회비 여부", width: 130 },
+    { field: "state", headerName: "상태", width: 100 },
   ];
 
   const rows = [
@@ -49,9 +48,22 @@ function NewRecruit() {
   ];
   return (
     <NewRecruitContainer>
-      <DataTable columns={columns} rows={rows}></DataTable>
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        pageSize={5}
+        rowsPerPageOptions={[5]}
+        checkboxSelection
+      />
     </NewRecruitContainer>
   );
 }
-const NewRecruitContainer = styled.div``;
+const NewRecruitContainer = styled.div`
+  width: "100%";
+  height: 400px;
+  & > .MuiDataGrid-root {
+    font-size: 14px;
+    text-align: center;
+  }
+`;
 export default NewRecruit;
