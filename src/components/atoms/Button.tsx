@@ -44,6 +44,9 @@ const ButtonWrapper = styled.button<ButtonType>`
     margin: 0;
     padding: 1rem 4rem;
     border-radius: 30px;
+    & + & {
+      margin-left: 20px;
+    }
   }
 `;
 

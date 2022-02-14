@@ -64,6 +64,10 @@ const NewRecruitContainer = styled.div`
   & > .MuiDataGrid-root {
     font-size: 14px;
     text-align: center;
+    border: none;
+  }
+  & > .MuiDataGrid-cell {
+    border-bottom: none;
   }
 `;
 export default NewRecruit;
