@@ -15,8 +15,7 @@ function ApplicationFormCreate() {
         <Button
           onClick={handleBtnClick}
           bgColor="#e9e9e9"
-          className="btn--recruit"
-          fontSize="16px"
+          className="recruit-btn"
         >
           가입신청서 만들기
         </Button>

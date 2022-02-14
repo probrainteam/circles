@@ -7,28 +7,14 @@ interface ButtonProps {
   className?: string;
   onClick?: () => void;
   bgColor?: string;
-  width?: string;
-  fontSize?: string;
 }
 interface ButtonType {
   bgColor?: string;
-  width?: string;
-  fontSize?: string;
 }
 
-function Button({
-  type,
-  className,
-  onClick,
-  children,
-  bgColor,
-  width,
-  fontSize,
-}: ButtonProps) {
+function Button({ type, className, onClick, children, bgColor }: ButtonProps) {
   const commonProps = {
     bgColor,
-    width,
-    fontSize,
   };
   return (
     <ButtonWrapper
@@ -44,17 +30,19 @@ function Button({
 
 const ButtonWrapper = styled.button<ButtonType>`
   background-color: ${({ bgColor }) => bgColor};
-  width: ${({ width }) => (width ? width : "100%")};
-  height: 60px;
-  font-size: ${({ fontSize }) => (fontSize ? fontSize : "14px")};
+  font-size: 14px;
   border: none;
-  border-radius: 5px;
-  margin: 8px 0;
-
-  &.btn--recruit {
+  &.auth-btn {
+    width: 100%;
+    height: 60px;
+    border-radius: 5px;
+    margin: 8px 0;
+  }
+  &.recruit-btn {
+    font-size: 16px;
     height: fit-content;
     margin: 0;
-    padding: 1.4rem 40px;
+    padding: 1rem 4rem;
     border-radius: 30px;
   }
 `;
