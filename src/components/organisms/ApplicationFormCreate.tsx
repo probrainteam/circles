@@ -9,6 +9,9 @@ function ApplicationFormCreate() {
     console.log("가입신청서 만들기 button click");
     setApplicationFormUrl("");
   };
+  const handleCopyClick = () => {
+    console.log("copy");
+  };
   return (
     <ApplicationFormContainer>
       <ButtonContainer>
@@ -27,7 +30,7 @@ function ApplicationFormCreate() {
           value={applicationFormUrl}
         ></Input>
       </InputContainer>
-      <IconContainer>
+      <IconContainer onClick={handleCopyClick}>
         <CopyIcon />
       </IconContainer>
     </ApplicationFormContainer>
@@ -39,10 +42,13 @@ const ApplicationFormContainer = styled.div`
   gap: 10px;
   align-items: center;
 `;
-const IconContainer = styled.div``;
+const IconContainer = styled.div`
+  &:hover {
+    cursor: pointer;
+  }
+`;
 const ButtonContainer = styled.div``;
 const InputContainer = styled.div`
-  // height: 45px;
   flex-grow: 1;
 `;
 
