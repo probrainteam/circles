@@ -32,6 +32,9 @@ const ButtonWrapper = styled.button<ButtonType>`
   background-color: ${({ bgColor }) => bgColor};
   font-size: 14px;
   border: none;
+  &:hover {
+    cursor: pointer;
+  }
   &.auth-btn {
     width: 100%;
     height: 60px;
