@@ -87,8 +87,8 @@ function NewRecruit() {
       <DataGrid
         rows={rows}
         columns={columns}
-        // pageSize={5}
-        // rowsPerPageOptions={[5]}
+        pageSize={5}
+        rowsPerPageOptions={[5]}
         checkboxSelection
       />
     </NewRecruitContainer>
@@ -96,7 +96,7 @@ function NewRecruit() {
 }
 const NewRecruitContainer = styled.div`
   width: "100%";
-  height: 300px;
+  height: 400px;
   & > .MuiDataGrid-root {
     font-size: 14px;
     text-align: center;
