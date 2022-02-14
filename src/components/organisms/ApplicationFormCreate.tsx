@@ -2,7 +2,7 @@ import Button from "components/atoms/Button";
 import Input from "components/atoms/Input";
 import React, { useState } from "react";
 import styled from "@emotion/styled";
-
+import { CopyIcon } from "components/atoms/Icons";
 function ApplicationFormCreate() {
   const [applicationFormUrl, setApplicationFormUrl] = useState("");
   const handleBtnClick = () => {
@@ -27,6 +27,9 @@ function ApplicationFormCreate() {
           value={applicationFormUrl}
         ></Input>
       </InputContainer>
+      <IconContainer>
+        <CopyIcon />
+      </IconContainer>
     </ApplicationFormContainer>
   );
 }
@@ -34,8 +37,9 @@ const ApplicationFormContainer = styled.div`
   margin: 25px 0;
   display: flex;
   gap: 10px;
-  // height: 45px;
+  align-items: center;
 `;
+const IconContainer = styled.div``;
 const ButtonContainer = styled.div``;
 const InputContainer = styled.div`
   // height: 45px;
