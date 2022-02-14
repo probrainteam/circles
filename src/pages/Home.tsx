@@ -24,7 +24,7 @@ function Home() {
 
       {/* // TODO : 이후 Week단위 task 캘린더 직접 구현 -- 날짜 개념이 추가된 투두리스트 */}
       <Calendar height="600px" defaultView="week" scheduleView />
-
+      
       <TodoList />
     </Layout>
   );
