@@ -45,14 +45,50 @@ function NewRecruit() {
       isDues: false,
       state: "휴학",
     },
+    {
+      id: 4,
+      name: "최현석",
+      studentId: "2022000000",
+      phone: "01066667777",
+      grade: "3",
+      isDues: false,
+      state: "휴학",
+    },
+    {
+      id: 5,
+      name: "최현석",
+      studentId: "2022000000",
+      phone: "01066667777",
+      grade: "3",
+      isDues: false,
+      state: "휴학",
+    },
+    {
+      id: 6,
+      name: "최현석",
+      studentId: "2022000000",
+      phone: "01066667777",
+      grade: "3",
+      isDues: false,
+      state: "휴학",
+    },
+    {
+      id: 7,
+      name: "최현석",
+      studentId: "2022000000",
+      phone: "01066667777",
+      grade: "3",
+      isDues: false,
+      state: "휴학",
+    },
   ];
   return (
     <NewRecruitContainer>
       <DataGrid
         rows={rows}
         columns={columns}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
+        // pageSize={5}
+        // rowsPerPageOptions={[5]}
         checkboxSelection
       />
     </NewRecruitContainer>
@@ -60,7 +96,7 @@ function NewRecruit() {
 }
 const NewRecruitContainer = styled.div`
   width: "100%";
-  height: 400px;
+  height: 300px;
   & > .MuiDataGrid-root {
     font-size: 14px;
     text-align: center;
