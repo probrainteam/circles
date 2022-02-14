@@ -23,5 +23,6 @@ const ContentBoxWrapper = styled.div`
   box-shadow: 4px 12px 30px 6px rgba(0, 0, 0, 0.09);
   display: flex;
   flex-direction: column;
+  margin: 25px 0;
 `;
 export default ContentContainer;
