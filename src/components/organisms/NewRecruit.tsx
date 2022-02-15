@@ -45,6 +45,42 @@ function NewRecruit() {
       isDues: false,
       state: "휴학",
     },
+    {
+      id: 4,
+      name: "최현석",
+      studentId: "2022000000",
+      phone: "01066667777",
+      grade: "3",
+      isDues: false,
+      state: "휴학",
+    },
+    {
+      id: 5,
+      name: "최현석",
+      studentId: "2022000000",
+      phone: "01066667777",
+      grade: "3",
+      isDues: false,
+      state: "휴학",
+    },
+    {
+      id: 6,
+      name: "최현석",
+      studentId: "2022000000",
+      phone: "01066667777",
+      grade: "3",
+      isDues: false,
+      state: "휴학",
+    },
+    {
+      id: 7,
+      name: "최현석",
+      studentId: "2022000000",
+      phone: "01066667777",
+      grade: "3",
+      isDues: false,
+      state: "휴학",
+    },
   ];
   return (
     <NewRecruitContainer>
@@ -64,6 +100,10 @@ const NewRecruitContainer = styled.div`
   & > .MuiDataGrid-root {
     font-size: 14px;
     text-align: center;
+    border: none;
+  }
+  & > .MuiDataGrid-cell {
+    border-bottom: none;
   }
 `;
 export default NewRecruit;

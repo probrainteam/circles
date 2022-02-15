@@ -50,11 +50,14 @@ function Login() {
             onChange={handleInputChange}
           />
           <ErrorMsg>{errorMsg}</ErrorMsg>
-          <Button type="submit" className="signin">
+          <Button type="submit" className="signin auth-btn">
             LOGIN
           </Button>
         </form>
-        <Button className="regist" onClick={() => navigation("/regist")}>
+        <Button
+          className="regist auth-btn"
+          onClick={() => navigation("/regist")}
+        >
           회원가입
         </Button>
       </LoginInner>

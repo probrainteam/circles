@@ -9,6 +9,7 @@ import {
   IoLogoGithub,
   IoAtCircleSharp,
 } from "react-icons/io5";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
 export const HomeIcon = () => {
   return <IoHomeOutline size={20} color="#fff" />;
@@ -44,4 +45,7 @@ export const GithubIcon = () => {
 
 export const HamburgerIcon = () => {
   return <IoReorderFourOutline size={20} color="#fff" />;
+};
+export const CopyIcon = () => {
+  return <ContentCopyIcon sx={{ fontSize: 20, verticalAlign: "center" }} />;
 };

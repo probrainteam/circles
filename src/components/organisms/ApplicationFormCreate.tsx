@@ -2,12 +2,15 @@ import Button from "components/atoms/Button";
 import Input from "components/atoms/Input";
 import React, { useState } from "react";
 import styled from "@emotion/styled";
-
+import { CopyIcon } from "components/atoms/Icons";
 function ApplicationFormCreate() {
   const [applicationFormUrl, setApplicationFormUrl] = useState("");
   const handleBtnClick = () => {
     console.log("가입신청서 만들기 button click");
     setApplicationFormUrl("");
+  };
+  const handleCopyClick = () => {
+    console.log("copy");
   };
   return (
     <ApplicationFormContainer>
@@ -15,8 +18,7 @@ function ApplicationFormCreate() {
         <Button
           onClick={handleBtnClick}
           bgColor="#e9e9e9"
-          className="btn--recruit"
-          fontSize="16px"
+          className="recruit-btn"
         >
           가입신청서 만들기
         </Button>
@@ -28,6 +30,9 @@ function ApplicationFormCreate() {
           value={applicationFormUrl}
         ></Input>
       </InputContainer>
+      <IconContainer onClick={handleCopyClick}>
+        <CopyIcon />
+      </IconContainer>
     </ApplicationFormContainer>
   );
 }
@@ -35,11 +40,15 @@ const ApplicationFormContainer = styled.div`
   margin: 25px 0;
   display: flex;
   gap: 10px;
-  // height: 45px;
+  align-items: center;
+`;
+const IconContainer = styled.div`
+  &:hover {
+    cursor: pointer;
+  }
 `;
 const ButtonContainer = styled.div``;
 const InputContainer = styled.div`
-  // height: 45px;
   flex-grow: 1;
 `;
 
