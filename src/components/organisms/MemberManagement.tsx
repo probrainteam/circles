@@ -4,6 +4,7 @@ import SectionTitle from "../atoms/SectionTitle";
 import ContentContainer from "components/atoms/ContentContainer";
 import MemberManagementList from "./MemberManagementList";
 import Charts from "components/molecules/Charts";
+import RatioChart from "components/molecules/RatioChart";
 const radialBarOption = {
   series: [70],
   options: {
@@ -17,9 +18,9 @@ const radialBarOption = {
         },
       },
     },
-    labels: ["Cricket"],
+    labels: ["undefined"],
     title: {
-      text: "타이틀",
+      text: "undefined",
       align: "center",
     },
   },
@@ -36,7 +37,7 @@ const DonutOption1 = {
       show: false,
     },
     title: {
-      text: "타이틀",
+      text: "undefined",
       align: "center",
     },
     // dataLabels: {
@@ -71,21 +72,14 @@ function MemberManagement() {
         subTitle={"회원 관리를 위한 강력한 기능들을 제공합니다. 🔥"}
       />
       <ChartContainer>
+        <RatioChart thisNumber={40} totalNumber={50}></RatioChart>
         <Charts
           option={radialBarOption}
-          // series={radialBarOption.series}
-          type="radialBar"
-          className="manage-chart"
-        />
-        <Charts
-          option={radialBarOption}
-          // series={radialBarOption.series}
           type="radialBar"
           className="manage-chart"
         />
         <Charts
           option={DonutOption1}
-          // series={DonutOption1.series}
           type="donut"
           className="manage-chart"
           height={190}
@@ -107,7 +101,7 @@ const ManagementContainer = styled.div`
   margin-top: 50px;
 `;
 const ChartContainer = styled.div`
-  margin: 10px 0;display: flex;
+  margin: 25px 0;display: flex;
 }
 `;
 export default MemberManagement;
