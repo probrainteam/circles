@@ -17,8 +17,10 @@ function BasicSelect({ items, target, setTarget }: SelectBoxProps) {
   const handleChange = (event: SelectChangeEvent) => {
     setTarget(event.target.value as string);
   };
-  const itemList = items.map((item) => (
-    <MenuItem value={item.value}>{item.lable}</MenuItem>
+  const itemList = items.map((item, index) => (
+    <MenuItem key={"menu-item-" + index} value={item.value}>
+      {item.lable}
+    </MenuItem>
   ));
   return (
     <Box sx={{ minWidth: 120 }}>
