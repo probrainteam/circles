@@ -23,7 +23,8 @@ function Input({
       placeholder={placeholder}
       className={className}
       name={name}
-      value={value}
+      // value={value}
+      defaultValue={value}
       onChange={onChange}
     />
   );
