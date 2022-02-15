@@ -2,6 +2,9 @@ import React from "react";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import styled from "@emotion/styled";
 import MemberManageSearch from "components/molecules/MemberManageSearch";
+import Button from "components/atoms/Button";
+import { CopyIcon } from "components/atoms/Icons";
+import IconButton from "components/atoms/IconButton";
 
 interface MemberManagementListProps {
   children: string;
@@ -84,20 +87,45 @@ function MemberManagementList() {
     },
   ];
   return (
-    <MemberManagementListContainer>
+    <div>
       <MemberManageSearch />
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
-        checkboxSelection
-      />
-    </MemberManagementListContainer>
+      <MemberManagementListContainer>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          pageSize={5}
+          rowsPerPageOptions={[5]}
+          checkboxSelection
+        />
+      </MemberManagementListContainer>
+      <ButtonContainer>
+        <IconButton
+          Icon={<CopyIcon />}
+          bgColor="#FBE44D"
+          btnClassName="normal-btn "
+          text="kakao"
+        />
+        <IconButton
+          Icon={<CopyIcon />}
+          bgColor="#e9e9e9"
+          btnClassName="normal-btn "
+          text="클립보드 복사"
+        />
+
+        <Button bgColor="#e9e9e9" className="normal-btn ">
+          엑셀파일로 내보내기
+        </Button>
+        <Button bgColor="#e9e9e9" className="normal-btn ">
+          회원추가
+        </Button>
+        <Button bgColor="#e9e9e9" className="normal-btn ">
+          회원 삭제
+        </Button>
+      </ButtonContainer>
+    </div>
   );
 }
 const MemberManagementListContainer = styled.div`
-  width: "100%";
   height: 400px;
   & > .MuiDataGrid-root {
     font-size: 14px;
@@ -107,5 +135,11 @@ const MemberManagementListContainer = styled.div`
   & > .MuiDataGrid-cell {
     border-bottom: none;
   }
+`;
+const ButtonContainer = styled.div`
+  padding-bottom: 20px;
+  padding-left: 20px;
+  display: flex;
+  gap: 10px;
 `;
 export default MemberManagementList;

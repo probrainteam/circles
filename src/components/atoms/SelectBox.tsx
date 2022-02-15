@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, Dispatch, SetStateAction } from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import styled from "@emotion/styled";
-function BasicSelect({ items }: SelectBoxProps) {
-  const [target, setTarget] = useState("");
-
+interface SelectBoxProps {
+  items: Array<{
+    lable: string;
+    value: string;
+  }>;
+  target: string;
+  setTarget: Dispatch<SetStateAction<string>>;
+}
+function BasicSelect({ items, target, setTarget }: SelectBoxProps) {
   const handleChange = (event: SelectChangeEvent) => {
     setTarget(event.target.value as string);
   };
@@ -25,16 +31,11 @@ function BasicSelect({ items }: SelectBoxProps) {
     </Box>
   );
 }
-interface SelectBoxProps {
-  items: Array<{
-    lable: string;
-    value: string;
-  }>;
-}
-function SelectBox({ items }: SelectBoxProps) {
+
+function SelectBox({ items, target, setTarget }: SelectBoxProps) {
   return (
     <SelectContainer>
-      <BasicSelect items={items} />
+      <BasicSelect items={items} target={target} setTarget={setTarget} />
     </SelectContainer>
   );
 }

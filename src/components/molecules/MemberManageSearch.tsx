@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import SelectBox from "components/atoms/SelectBox";
 import Input from "components/atoms/Input";
-import React from "react";
+import React, { useState } from "react";
 
 const tempSelectItemList = [
   {
@@ -14,9 +14,15 @@ const tempSelectItemList = [
   },
 ];
 function MemberManageSearch() {
+  const [selectTarget, setSelectTarget] = useState("");
+
   return (
     <MemberManageSearchContainer>
-      <SelectBox items={tempSelectItemList} />
+      <SelectBox
+        items={tempSelectItemList}
+        target={selectTarget}
+        setTarget={setSelectTarget}
+      />
       <Input value={undefined} className={"member-manage-input normal-input"} />
     </MemberManageSearchContainer>
   );

@@ -16,10 +16,10 @@ function Recruit() {
       <ContentContainer title="새로 들어온 가입 신청">
         <NewRecruit></NewRecruit>
         <ButtonContainer>
-          <Button bgColor="#e9e9e9" className="recruit-btn">
+          <Button bgColor="#e9e9e9" className="normal-btn">
             승인
           </Button>
-          <Button bgColor="#e9e9e9" className="recruit-btn">
+          <Button bgColor="#e9e9e9" className="normal-btn">
             거절
           </Button>
         </ButtonContainer>
@@ -30,6 +30,8 @@ function Recruit() {
 const ButtonContainer = styled.div`
   padding-bottom: 20px;
   padding-left: 20px;
+  display: flex;
+  gap: 10px;
 `;
 
 export default Recruit;

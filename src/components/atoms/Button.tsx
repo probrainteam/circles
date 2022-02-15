@@ -35,21 +35,24 @@ const ButtonWrapper = styled.button<ButtonType>`
   &:hover {
     cursor: pointer;
   }
+
   &.auth-btn {
     width: 100%;
     height: 60px;
     border-radius: 5px;
     margin: 8px 0;
   }
-  &.recruit-btn {
+  &.normal-btn {
     font-size: 16px;
     height: fit-content;
     margin: 0;
     padding: 1rem 4rem;
     border-radius: 30px;
-    & + & {
-      margin-left: 20px;
-    }
+  }
+  &.btn-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 `;
 
