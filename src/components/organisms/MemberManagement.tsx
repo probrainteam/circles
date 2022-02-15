@@ -8,7 +8,6 @@ const radialBarOption = {
   series: [70],
   options: {
     chart: {
-      height: 350,
       type: "radialBar",
     },
     plotOptions: {
@@ -19,28 +18,48 @@ const radialBarOption = {
       },
     },
     labels: ["Cricket"],
+    title: {
+      text: "타이틀",
+      align: "center",
+    },
   },
   type: "radialBar",
 };
 const DonutOption1 = {
-  series: [44, 55, 41, 17, 15],
+  series: [10, 8, 5, 14],
   options: {
+    labels: ["1학년", "2학년", "3학년", "4학년"],
     chart: {
       type: "donut",
     },
-    responsive: [
-      {
-        breakpoint: 480,
-        options: {
-          chart: {
-            width: 200,
-          },
-          legend: {
-            position: "bottom",
-          },
-        },
-      },
-    ],
+    legend: {
+      show: false,
+    },
+    title: {
+      text: "타이틀",
+      align: "center",
+    },
+    // dataLabels: {
+    //   enabled: true,
+    //   enabledOnSeries: undefined,
+    //   formatter: function (val: any, opts: any) {
+    //     return val;
+    //   },
+    // },
+
+    // responsive: [
+    //   {
+    //     breakpoint: 480,
+    //     options: {
+    //       chart: {
+    //         width: 200,
+    //       },
+    //       legend: {
+    //         position: "bottom",
+    //       },
+    //     },
+    //   },
+    // ],
   },
   type: "donut",
 };
@@ -51,16 +70,33 @@ function MemberManagement() {
         mainTitle={"회원관리"}
         subTitle={"회원 관리를 위한 강력한 기능들을 제공합니다. 🔥"}
       />
-      <Charts
-        options={radialBarOption.options}
-        series={radialBarOption.series}
-        type="radialBar"
-      />
-      <Charts
-        options={DonutOption1.options}
-        series={DonutOption1.series}
-        type="donut"
-      />
+      <ChartContainer>
+        <Charts
+          option={radialBarOption}
+          // series={radialBarOption.series}
+          type="radialBar"
+          className="manage-chart"
+        />
+        <Charts
+          option={radialBarOption}
+          // series={radialBarOption.series}
+          type="radialBar"
+          className="manage-chart"
+        />
+        <Charts
+          option={DonutOption1}
+          // series={DonutOption1.series}
+          type="donut"
+          className="manage-chart"
+          height={190}
+        />
+        <Charts
+          option={DonutOption1}
+          type="donut"
+          className="manage-chart"
+          height={190}
+        />
+      </ChartContainer>
       <ContentContainer title="회원관리">
         <MemberManagementList></MemberManagementList>
       </ContentContainer>
@@ -69,5 +105,9 @@ function MemberManagement() {
 }
 const ManagementContainer = styled.div`
   margin-top: 50px;
+`;
+const ChartContainer = styled.div`
+  margin: 10px 0;display: flex;
+}
 `;
 export default MemberManagement;

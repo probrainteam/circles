@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
+import styled from "@emotion/styled";
 
 interface ChartsProps {
-  options: any;
-  series: Array<any>;
+  option: {
+    options: Object;
+    series: Array<any>;
+    title?: Object;
+  };
   type:
     | "donut"
     | "area"
@@ -22,17 +26,26 @@ interface ChartsProps {
     | "polarArea"
     | "rangeBar"
     | undefined;
+  height?: string | number | undefined;
+  className?: string;
 }
-function Charts({ options, series, type }: ChartsProps) {
+function Charts({ option, type, className, height = 200 }: ChartsProps) {
   return (
-    <div className="app">
-      <div className="row">
-        <div className="mixed-chart">
-          <Chart options={options} series={series} type={type} height={350} />
-        </div>
-      </div>
-    </div>
+    <ChartContainer className={className}>
+      <Chart
+        options={option.options}
+        series={option.series}
+        title={option.title}
+        type={type}
+        height={height}
+      />
+    </ChartContainer>
   );
 }
-
+const ChartContainer = styled.div`
+  &.manage-chart {
+    width: 24%;
+    min-height: fit-content;
+  }
+`;
 export default Charts;
