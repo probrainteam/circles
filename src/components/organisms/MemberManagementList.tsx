@@ -127,6 +127,7 @@ function MemberManagementList() {
 }
 const MemberManagementListContainer = styled.div`
   height: 400px;
+  padding: 0 20px;
   & > .MuiDataGrid-root {
     font-size: 14px;
     text-align: center;

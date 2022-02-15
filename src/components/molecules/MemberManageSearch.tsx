@@ -29,7 +29,7 @@ function MemberManageSearch() {
 }
 const MemberManageSearchContainer = styled.div`
   display: flex;
-  padding: 40px;
+  padding: 20px;
   gap: 20px;
 `;
 export default MemberManageSearch;
