@@ -56,6 +56,9 @@ const TextField = styled.input`
   &.input--recruit {
     border-radius: 3rem;
   }
+  &.member-manage-input {
+    border-radius: 3rem;
+  }
 `;
 
 export default Input;

@@ -1,6 +1,7 @@
 import React from "react";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import styled from "@emotion/styled";
+import MemberManageSearch from "components/molecules/MemberManageSearch";
 
 interface MemberManagementListProps {
   children: string;
@@ -84,6 +85,7 @@ function MemberManagementList() {
   ];
   return (
     <MemberManagementListContainer>
+      <MemberManageSearch />
       <DataGrid
         rows={rows}
         columns={columns}
