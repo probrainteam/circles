@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { LegacyRef } from "react";
 
 interface InputProps {
   type?: string;
@@ -8,6 +9,7 @@ interface InputProps {
   value: string | undefined;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   readOnly?: boolean | undefined;
+  urlInputRef?: LegacyRef<HTMLInputElement> | undefined;
 }
 
 function Input({
@@ -18,6 +20,7 @@ function Input({
   value,
   onChange,
   readOnly,
+  urlInputRef,
 }: InputProps) {
   return (
     <TextField
@@ -29,6 +32,7 @@ function Input({
       defaultValue={value}
       onChange={onChange}
       readOnly={readOnly}
+      ref={urlInputRef}
     />
   );
 }

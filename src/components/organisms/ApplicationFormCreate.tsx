@@ -1,16 +1,22 @@
 import Button from "components/atoms/Button";
 import Input from "components/atoms/Input";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styled from "@emotion/styled";
 import { CopyIcon } from "components/atoms/Icons";
 function ApplicationFormCreate() {
   const [applicationFormUrl, setApplicationFormUrl] = useState("");
+  const urlInputRef = useRef<HTMLInputElement>(null);
   const handleBtnClick = () => {
     console.log("가입신청서 만들기 button click");
     setApplicationFormUrl("http://localhost:3000/manage");
   };
   const handleCopyClick = () => {
-    console.log("copy");
+    const el = urlInputRef.current;
+    if (el) {
+      el.select();
+      document.execCommand("copy");
+      alert("복사되었습니다. ");
+    }
   };
   return (
     <ApplicationFormContainer>
@@ -28,6 +34,7 @@ function ApplicationFormCreate() {
           className="normal-input input--recruit"
           placeholder="가입신청서 만들기 버튼을 누르면 URL이 나타납니다."
           value={applicationFormUrl}
+          urlInputRef={urlInputRef}
           readOnly
         ></Input>
       </InputContainer>
