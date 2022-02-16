@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
@@ -6,26 +6,28 @@ import Input from "components/atoms/Input";
 import ErrorMsg from "components/atoms/ErrorMsg";
 import Logo from "components/atoms/Logo";
 import Button from "components/atoms/Button";
+import { onLogin } from "api/auth";
 
 function Login() {
   const navigation = useNavigate();
 
-  const [inputId, setInputId] = useState<string>();
-  const [inputPw, setInputPw] = useState<string>();
-  const [errorMsg, setErrorMsg] = useState<string>();
+  const [id, setId] = useState("");
+  const [pw, setPw] = useState("");
+  const [error, setError] = useState("");
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const {
       target: { name, value },
     } = e;
 
-    if (name === "inputId") setInputId(value);
-    else if (name === "inputPw") setInputPw(value);
+    if (name === "id") setId(value);
+    else if (name === "pw") setPw(value);
   };
 
-  const handleLoginClick = () => {
-    console.log("click login");
-    setErrorMsg("error");
+  const handleLoginClick = (e: FormEvent) => {
+    e.preventDefault();
+
+    onLogin(id, pw);
   };
 
   return (
@@ -38,7 +40,7 @@ function Login() {
             placeholder="아이디를 입력해주세요"
             className="auth-input"
             name="id"
-            value={inputId}
+            value={id}
             onChange={handleInputChange}
           />
           <Input
@@ -46,10 +48,10 @@ function Login() {
             placeholder={"비밀번호를 입력해주세요"}
             className="auth-input"
             name="pw"
-            value={inputPw}
+            value={pw}
             onChange={handleInputChange}
           />
-          <ErrorMsg>{errorMsg}</ErrorMsg>
+          <ErrorMsg>{error}</ErrorMsg>
           <Button type="submit" className="signin auth-btn">
             LOGIN
           </Button>
