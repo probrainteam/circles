@@ -9,7 +9,6 @@ interface InputProps {
   value: string | undefined;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   readOnly?: boolean | undefined;
-  ref?: LegacyRef<HTMLInputElement> | undefined;
 }
 
 function Input({
@@ -20,7 +19,6 @@ function Input({
   value,
   onChange,
   readOnly,
-  ref,
 }: InputProps) {
   return (
     <TextField
@@ -32,7 +30,6 @@ function Input({
       defaultValue={value}
       onChange={onChange}
       readOnly={readOnly}
-      ref={ref}
     />
   );
 }

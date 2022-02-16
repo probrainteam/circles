@@ -6,6 +6,10 @@ import NewRecruit from "./NewRecruit";
 import Button from "components/atoms/Button";
 import styled from "@emotion/styled";
 function Recruit() {
+  // 승인 버튼 클릭
+  const handleApproveBtnClick = () => {
+    
+  };
   return (
     <div>
       <SectionTitle
@@ -16,7 +20,11 @@ function Recruit() {
       <ContentContainer title="새로 들어온 가입 신청">
         <NewRecruit></NewRecruit>
         <ButtonContainer>
-          <Button bgColor="#e9e9e9" className="normal-btn">
+          <Button
+            bgColor="#e9e9e9"
+            className="normal-btn"
+            onClick={handleApproveBtnClick}
+          >
             승인
           </Button>
           <Button bgColor="#e9e9e9" className="normal-btn">
