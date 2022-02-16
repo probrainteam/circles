@@ -48,7 +48,7 @@ interface TableContainerProps {
   children: any;
 }
 const TableContainer = styled.div<TableContainerProps>`
-  height: ${({ pageSize }) => pageSize * 75}px;
+  height: ${({ pageSize }) => pageSize * 60 + 70}px;
   & > .MuiDataGrid-root {
     font-size: 14px;
     text-align: center;

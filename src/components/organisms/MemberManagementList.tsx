@@ -20,7 +20,7 @@ function MemberManagementList() {
       <DataTable
         rows={rows}
         columns={columns}
-        pageSize={5}
+        pageSize={10}
         rowsPerPageOptions={[5]}
         selectionModel={selectionModel}
         setSelectionModel={setSelectionModel}
@@ -126,6 +126,61 @@ const rows = [
   },
   {
     id: 7,
+    name: "최현석",
+    studentId: "2022000000",
+    phone: "01066667777",
+    grade: "3",
+    isDues: false,
+    state: "휴학",
+  },
+  {
+    id: 8,
+    name: "최현석",
+    studentId: "2022000000",
+    phone: "01066667777",
+    grade: "3",
+    isDues: false,
+    state: "휴학",
+  },
+
+  {
+    id: 9,
+    name: "최현석",
+    studentId: "2022000000",
+    phone: "01066667777",
+    grade: "3",
+    isDues: false,
+    state: "휴학",
+  },
+  {
+    id: 10,
+    name: "최현석",
+    studentId: "2022000000",
+    phone: "01066667777",
+    grade: "3",
+    isDues: false,
+    state: "휴학",
+  },
+  {
+    id: 11,
+    name: "최현석",
+    studentId: "2022000000",
+    phone: "01066667777",
+    grade: "3",
+    isDues: false,
+    state: "휴학",
+  },
+  {
+    id: 12,
+    name: "최현석",
+    studentId: "2022000000",
+    phone: "01066667777",
+    grade: "3",
+    isDues: false,
+    state: "휴학",
+  },
+  {
+    id: 13,
     name: "최현석",
     studentId: "2022000000",
     phone: "01066667777",
