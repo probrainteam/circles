@@ -28,15 +28,17 @@ function Recruit() {
       />
       <ApplicationFormCreate></ApplicationFormCreate>
       <ContentContainer title="새로 들어온 가입 신청">
-        <DataTable
-          selectionModel={selectionModel}
-          setSelectionModel={setSelectionModel}
-          rows={rows}
-          columns={columns}
-          pageSize={5}
-          rowsPerPageOptions={[5]}
-          className="table-border--none"
-        ></DataTable>
+        <DataTableContainer>
+          <DataTable
+            selectionModel={selectionModel}
+            setSelectionModel={setSelectionModel}
+            rows={rows}
+            columns={columns}
+            pageSize={5}
+            rowsPerPageOptions={[5]}
+          ></DataTable>
+        </DataTableContainer>
+
         <ButtonContainer>
           <Button
             bgColor="#e9e9e9"
@@ -57,11 +59,15 @@ function Recruit() {
     </div>
   );
 }
+
+const DataTableContainer = styled.div`
+  margin: 32px 32px 0;
+`;
 const ButtonContainer = styled.div`
-  padding-bottom: 20px;
-  padding-left: 20px;
   display: flex;
-  gap: 10px;
+  gap: 20px;
+  margin: 0 32px 32px;
+  justify-content: flex-end;
 `;
 
 export default Recruit;
