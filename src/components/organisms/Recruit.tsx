@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import SectionTitle from "../atoms/SectionTitle";
 import ApplicationFormCreate from "./ApplicationFormCreate";
 import ContentContainer from "components/atoms/ContentContainer";
 import NewRecruit from "./NewRecruit";
 import Button from "components/atoms/Button";
 import styled from "@emotion/styled";
+import { GridSelectionModel } from "@mui/x-data-grid";
 function Recruit() {
+  const [selectionModel, setSelectionModel] = useState<GridSelectionModel>([]);
+
+  // 승인 버튼 클릭
+  const handleApproveBtnClick = () => {
+    console.log("승인버튼 클릭", selectionModel);
+    // setSelectionModel([]); //초기화
+  };
+  // 거절 버튼 클릭
+  const handleRejectBtnClick = () => {
+    console.log("거절버튼 클릭", selectionModel);
+  };
   return (
     <div>
       <SectionTitle
@@ -14,12 +26,23 @@ function Recruit() {
       />
       <ApplicationFormCreate></ApplicationFormCreate>
       <ContentContainer title="새로 들어온 가입 신청">
-        <NewRecruit></NewRecruit>
+        <NewRecruit
+          selectionModel={selectionModel}
+          setSelectionModel={setSelectionModel}
+        ></NewRecruit>
         <ButtonContainer>
-          <Button bgColor="#e9e9e9" className="normal-btn">
+          <Button
+            bgColor="#e9e9e9"
+            className="normal-btn"
+            onClick={handleApproveBtnClick}
+          >
             승인
           </Button>
-          <Button bgColor="#e9e9e9" className="normal-btn">
+          <Button
+            bgColor="#e9e9e9"
+            className="normal-btn"
+            onClick={handleRejectBtnClick}
+          >
             거절
           </Button>
         </ButtonContainer>

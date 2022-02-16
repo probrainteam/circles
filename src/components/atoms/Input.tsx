@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { LegacyRef } from "react";
 
 interface InputProps {
   type?: string;
@@ -7,6 +8,7 @@ interface InputProps {
   name?: string;
   value: string | undefined;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  readOnly?: boolean | undefined;
 }
 
 function Input({
@@ -16,6 +18,7 @@ function Input({
   name,
   value,
   onChange,
+  readOnly,
 }: InputProps) {
   return (
     <TextField
@@ -23,8 +26,10 @@ function Input({
       placeholder={placeholder}
       className={className}
       name={name}
-      value={value}
+      // value={value}
+      defaultValue={value}
       onChange={onChange}
+      readOnly={readOnly}
     />
   );
 }
