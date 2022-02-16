@@ -26,7 +26,16 @@ function BasicSelect({ items, target, setTarget }: SelectBoxProps) {
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
         <InputLabel>search</InputLabel>
-        <Select value={target} label="search" onChange={handleChange}>
+        <Select
+          value={target}
+          label="search"
+          onChange={handleChange}
+          sx={{
+            borderRadius: 30,
+            backgroundColor: "#f5f5f5",
+            border: "1px solid #f5f5f5",
+          }}
+        >
           {itemList}
         </Select>
       </FormControl>
@@ -41,9 +50,10 @@ function SelectBox({ items, target, setTarget }: SelectBoxProps) {
     </SelectContainer>
   );
 }
+
 const SelectContainer = styled.div`
-  & > .MuiBox-root {
-    // background-color: #f5f5f5;
+  & > MuiOutlinedInput-notchedOutline {
+    border: none;
   }
 `;
 
