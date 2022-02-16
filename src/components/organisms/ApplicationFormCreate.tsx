@@ -7,6 +7,7 @@ import { doCopy } from "utils/copy";
 
 function ApplicationFormCreate() {
   const [applicationFormUrl, setApplicationFormUrl] = useState("");
+
   const handleBtnClick = () => {
     console.log("가입신청서 만들기 button click");
     setApplicationFormUrl("http://localhost:3000/manage");
