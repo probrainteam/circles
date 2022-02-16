@@ -34,7 +34,7 @@ function ApplicationFormCreate() {
           className="normal-input input--recruit"
           placeholder="가입신청서 만들기 버튼을 누르면 URL이 나타납니다."
           value={applicationFormUrl}
-          urlInputRef={urlInputRef}
+          ref={urlInputRef}
           readOnly
         ></Input>
       </InputContainer>
