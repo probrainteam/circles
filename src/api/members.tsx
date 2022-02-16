@@ -6,16 +6,16 @@ export const getMembers = async () => {
 };
 
 export const addMember = (
-  id: string,
+  sid: string,
   major: string,
   name: string,
   year: number,
   email: string,
   phone: string,
   paid: boolean,
-  status: boolean
+  status: number
 ) => {
-  const data = { id, major, name, year, email, phone, paid, status };
+  const data = { sid, major, name, year, email, phone, paid, status };
   axios
     .post("/api/member", data)
     .then((res) => {
