@@ -5,7 +5,9 @@ import ContentContainer from "components/atoms/ContentContainer";
 import NewRecruit from "./NewRecruit";
 import Button from "components/atoms/Button";
 import styled from "@emotion/styled";
-import { GridSelectionModel } from "@mui/x-data-grid";
+import { GridColDef, GridSelectionModel } from "@mui/x-data-grid";
+import DataTable from "components/atoms/DataTable";
+
 function Recruit() {
   const [selectionModel, setSelectionModel] = useState<GridSelectionModel>([]);
 
@@ -26,10 +28,15 @@ function Recruit() {
       />
       <ApplicationFormCreate></ApplicationFormCreate>
       <ContentContainer title="새로 들어온 가입 신청">
-        <NewRecruit
+        <DataTable
           selectionModel={selectionModel}
           setSelectionModel={setSelectionModel}
-        ></NewRecruit>
+          rows={rows}
+          columns={columns}
+          pageSize={5}
+          rowsPerPageOptions={[5]}
+          className="table-border--none"
+        ></DataTable>
         <ButtonContainer>
           <Button
             bgColor="#e9e9e9"
@@ -58,3 +65,78 @@ const ButtonContainer = styled.div`
 `;
 
 export default Recruit;
+const columns: GridColDef[] = [
+  { field: "id", headerName: "ID", width: 100 },
+  { field: "name", headerName: "이름", width: 150 },
+  { field: "studentId", headerName: "학번", width: 160 },
+  { field: "phone", headerName: "전화번호", width: 160 },
+  { field: "grade", headerName: "학년", width: 100 },
+  { field: "isDues", headerName: "회비 여부", width: 130 },
+  { field: "state", headerName: "상태", width: 100 },
+];
+
+const rows = [
+  {
+    id: 1,
+    name: "변수미",
+    studentId: "2022000000",
+    phone: "01088884444",
+    grade: "2",
+    isDues: false,
+    state: "재학",
+  },
+  {
+    id: 2,
+    name: "전병민",
+    studentId: "2022000000",
+    phone: "01022225555",
+    grade: "4",
+    isDues: false,
+    state: "재학",
+  },
+  {
+    id: 3,
+    name: "최현석",
+    studentId: "2022000000",
+    phone: "01066667777",
+    grade: "3",
+    isDues: false,
+    state: "휴학",
+  },
+  {
+    id: 4,
+    name: "최현석",
+    studentId: "2022000000",
+    phone: "01066667777",
+    grade: "3",
+    isDues: false,
+    state: "휴학",
+  },
+  {
+    id: 5,
+    name: "최현석",
+    studentId: "2022000000",
+    phone: "01066667777",
+    grade: "3",
+    isDues: false,
+    state: "휴학",
+  },
+  {
+    id: 6,
+    name: "최현석",
+    studentId: "2022000000",
+    phone: "01066667777",
+    grade: "3",
+    isDues: false,
+    state: "휴학",
+  },
+  {
+    id: 7,
+    name: "최현석",
+    studentId: "2022000000",
+    phone: "01066667777",
+    grade: "3",
+    isDues: false,
+    state: "휴학",
+  },
+];
