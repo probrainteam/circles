@@ -17,16 +17,14 @@ function MemberManagementList() {
   return (
     <div>
       <MemberManageSearch />
-      <MemberManagementListContainer>
-        <DataTable
-          rows={rows}
-          columns={columns}
-          pageSize={5}
-          rowsPerPageOptions={[5]}
-          selectionModel={selectionModel}
-          setSelectionModel={setSelectionModel}
-        />
-      </MemberManagementListContainer>
+      <DataTable
+        rows={rows}
+        columns={columns}
+        pageSize={5}
+        rowsPerPageOptions={[5]}
+        selectionModel={selectionModel}
+        setSelectionModel={setSelectionModel}
+      />
       <ButtonContainer>
         <IconButton
           Icon={<CopyIcon />}
@@ -54,23 +52,11 @@ function MemberManagementList() {
     </div>
   );
 }
-const MemberManagementListContainer = styled.div`
-  height: 400px;
-  padding: 0 20px;
-  & > .MuiDataGrid-root {
-    font-size: 14px;
-    text-align: center;
-    border: none;
-  }
-  & > .MuiDataGrid-cell {
-    border-bottom: none;
-  }
-`;
+
 const ButtonContainer = styled.div`
-  padding-bottom: 20px;
-  padding-left: 20px;
   display: flex;
   gap: 10px;
+  justify-content: flex-end;
 `;
 export default MemberManagementList;
 const columns: GridColDef[] = [
