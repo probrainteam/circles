@@ -6,24 +6,54 @@ interface ButtonProps {
   children: ReactNode;
   className?: string;
   onClick?: () => void;
+  bgColor?: string;
+}
+interface ButtonType {
+  bgColor?: string;
 }
 
-function Button({ type, className, onClick, children }: ButtonProps) {
+function Button({ type, className, onClick, children, bgColor }: ButtonProps) {
+  const commonProps = {
+    bgColor,
+  };
   return (
-    <ButtonWrapper type={type} className={className} onClick={onClick}>
+    <ButtonWrapper
+      type={type}
+      className={className}
+      onClick={onClick}
+      {...commonProps}
+    >
       {children}
     </ButtonWrapper>
   );
 }
 
-const ButtonWrapper = styled.button`
-  background-color: ${({ color }) => color};
-  margin: 8px 0;
-  width: 100%;
-  height: 60px;
-  border: none;
-  border-radius: 5px;
+const ButtonWrapper = styled.button<ButtonType>`
+  background-color: ${({ bgColor }) => bgColor};
   font-size: 14px;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.auth-btn {
+    width: 100%;
+    height: 60px;
+    border-radius: 5px;
+    margin: 8px 0;
+  }
+  &.normal-btn {
+    font-size: 16px;
+    height: fit-content;
+    margin: 0;
+    padding: 1rem 4rem;
+    border-radius: 30px;
+  }
+  &.btn-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 `;
 
 export default Button;

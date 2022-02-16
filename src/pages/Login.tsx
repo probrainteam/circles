@@ -51,12 +51,20 @@ function Login() {
             value={pw}
             onChange={handleInputChange}
           />
+<<<<<<< HEAD
           <ErrorMsg>{error}</ErrorMsg>
           <Button type="submit" className="signin">
+=======
+          <ErrorMsg>{errorMsg}</ErrorMsg>
+          <Button type="submit" className="signin auth-btn">
+>>>>>>> 452ea6ae32866ce885c0f4ecce9c39e94f9c057f
             LOGIN
           </Button>
         </form>
-        <Button className="regist" onClick={() => navigation("/regist")}>
+        <Button
+          className="regist auth-btn"
+          onClick={() => navigation("/regist")}
+        >
           회원가입
         </Button>
       </LoginInner>
