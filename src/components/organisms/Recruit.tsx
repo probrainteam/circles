@@ -72,13 +72,13 @@ const ButtonContainer = styled.div`
 
 export default Recruit;
 const columns: GridColDef[] = [
-  { field: "id", headerName: "ID", width: 100 },
-  { field: "name", headerName: "이름", width: 150 },
-  { field: "studentId", headerName: "학번", width: 160 },
-  { field: "phone", headerName: "전화번호", width: 160 },
-  { field: "grade", headerName: "학년", width: 100 },
-  { field: "isDues", headerName: "회비 여부", width: 130 },
-  { field: "state", headerName: "상태", width: 100 },
+  { field: "id", headerName: "ID" },
+  { field: "name", headerName: "이름" },
+  { field: "studentId", headerName: "학번" },
+  { field: "phone", headerName: "전화번호" },
+  { field: "grade", headerName: "학년" },
+  { field: "isDues", headerName: "회비 여부" },
+  { field: "state", headerName: "상태" },
 ];
 
 const rows = [
