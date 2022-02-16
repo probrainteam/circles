@@ -61,12 +61,12 @@ function Recruit() {
 }
 
 const DataTableContainer = styled.div`
-  margin: 32px 32px 0;
+  // margin: 32px 32px 0;
 `;
 const ButtonContainer = styled.div`
   display: flex;
   gap: 20px;
-  margin: 0 32px 32px;
+  // margin: 0 32px 32px;
   justify-content: flex-end;
 `;
 

@@ -12,7 +12,7 @@ function ContentContainer({ children, title }: ContentBoxProps) {
   return (
     <ContentBoxWrapper>
       <ContentHeader>{title}</ContentHeader>
-      {children}
+      <Content>{children}</Content>
     </ContentBoxWrapper>
   );
 }
@@ -24,5 +24,11 @@ const ContentBoxWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 25px 0;
+`;
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  // gap: 32px;
+  padding: 32px;
 `;
 export default ContentContainer;
