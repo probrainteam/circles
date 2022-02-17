@@ -21,11 +21,10 @@ export const userSlice = createSlice({
     // login
     login: (state, action) => {},
     loginSuccess: (state, action) => {
-      console.log(action);
-      state.status = action.payload;
+      state.status = action.payload?.status ?? 200;
       state.statusText = action.payload?.statusText ?? "Success";
       state.isLoggedIn = true;
-      // state.circleName = action.payload.circleName;
+      state.circleName = action.payload.data?.circle;
     },
     loginError: (state, action) => {
       state.status = action.payload ?? 500;

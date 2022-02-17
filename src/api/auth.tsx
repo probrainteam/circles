@@ -20,9 +20,10 @@ export const onRegister = (
 export const onLogin = async ({ email, pw }: LoginInputData) => {
   try {
     const response = await axios.post("/api/user/login", { email, pw });
-    const { accessToken } = response.data.token;
+    console.log(response);
+    const { accessToken } = response.data;
     axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
-    return response.status;
+    return response;
   } catch (e) {
     return e;
   }
