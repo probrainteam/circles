@@ -3,20 +3,17 @@ import { useNavigate } from "react-router-dom";
 import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import Input from "components/atoms/Input";
-import ErrorMsg from "components/atoms/ErrorMsg";
 import Logo from "components/atoms/Logo";
 import Button from "components/atoms/Button";
-import { useAppDispatch, useAppSelector } from "hooks/redux-hooks";
+import { useAppDispatch } from "hooks/redux-hooks";
 import { userActions } from "features/user/userSlice";
 
 function Login() {
   const navigation = useNavigate();
-  const user = useAppSelector((state) => state.userReducer);
   const dispatch = useAppDispatch();
 
   const [email, setEmail] = useState("");
   const [pw, setPw] = useState("");
-  const [error, setError] = useState("");
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const {
@@ -53,11 +50,11 @@ function Login() {
             value={pw}
             onChange={handleInputChange}
           />
-          <ErrorMsg>{error}</ErrorMsg>
           <Button type="submit" className="signin auth-btn">
             LOGIN
           </Button>
         </form>
+
         <Button
           className="regist auth-btn"
           onClick={() => navigation("/regist")}
