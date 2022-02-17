@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useAppDispatch } from "hooks/redux-hooks";
-import { add } from "features/todoSlice";
+import { add } from "features/todo/todoSlice";
 import Input from "components/atoms/Input";
 
 function TodoCreate() {
