@@ -17,12 +17,6 @@ function Menus() {
       <Menu path="/manage" text="MANAGE">
         <ManageIcon />
       </Menu>
-      <Menu path="/account" text="ACCOUNT">
-        <AccountIcon />
-      </Menu>
-      <Menu path="/login" text="LOGIN">
-        <LoginIcon />
-      </Menu>
       <LogoutIcon />
     </MenusWrapper>
   );
