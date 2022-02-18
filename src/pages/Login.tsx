@@ -3,31 +3,30 @@ import { useNavigate } from "react-router-dom";
 import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import Input from "components/atoms/Input";
-import ErrorMsg from "components/atoms/ErrorMsg";
 import Logo from "components/atoms/Logo";
 import Button from "components/atoms/Button";
-import { onLogin } from "api/auth";
+import { useAppDispatch } from "hooks/redux-hooks";
+import { userActions } from "features/user/userSlice";
 
 function Login() {
   const navigation = useNavigate();
+  const dispatch = useAppDispatch();
 
-  const [id, setId] = useState("");
+  const [email, setEmail] = useState("");
   const [pw, setPw] = useState("");
-  const [error, setError] = useState("");
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const {
       target: { name, value },
     } = e;
 
-    if (name === "id") setId(value);
+    if (name === "email") setEmail(value);
     else if (name === "pw") setPw(value);
   };
 
   const handleLoginClick = (e: FormEvent) => {
     e.preventDefault();
-
-    onLogin(id, pw);
+    dispatch(userActions.login({ email, pw }));
   };
 
   return (
@@ -37,10 +36,10 @@ function Login() {
 
         <form onSubmit={handleLoginClick}>
           <Input
-            placeholder="아이디를 입력해주세요"
+            placeholder="이메일을 입력해주세요"
             className="auth-input"
-            name="id"
-            value={id}
+            name="email"
+            value={email}
             onChange={handleInputChange}
           />
           <Input
@@ -51,11 +50,11 @@ function Login() {
             value={pw}
             onChange={handleInputChange}
           />
-          <ErrorMsg>{error}</ErrorMsg>
           <Button type="submit" className="signin auth-btn">
             LOGIN
           </Button>
         </form>
+
         <Button
           className="regist auth-btn"
           onClick={() => navigation("/regist")}

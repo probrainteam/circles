@@ -27,7 +27,6 @@ function Regist() {
     setErrorMsg("error");
   };
 
-  // TODO : Auth useEffect
   useEffect(() => {
     console.log("regist page mount");
     return () => {
@@ -73,7 +72,7 @@ function Regist() {
             onChange={handleInputChange}
           />
           <ErrorMsg>{errorMsg}</ErrorMsg>
-          <Button type="submit" className="regist">
+          <Button type="submit" className="regist auth-btn">
             회원가입
           </Button>
         </form>

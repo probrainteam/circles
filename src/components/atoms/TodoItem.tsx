@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { MdDone, MdDelete } from "react-icons/md";
 import { useAppDispatch } from "hooks/redux-hooks";
-import { remove, toggle } from "features/todoSlice";
+import { remove, toggle } from "features/todo/todoSlice";
 
 interface TodoItemProps extends DoneType {
   id: number;

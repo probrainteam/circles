@@ -1,9 +1,31 @@
 import { configureStore } from "@reduxjs/toolkit";
-import todoSlice from "features/todoSlice";
+import createSagaMiddleware from "@redux-saga/core";
+import { persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import logger from "redux-logger";
+import rootReducer from "./rootReducer";
+import rootSaga from "./rootSaga";
 
-export const store = configureStore({ reducer: { todos: todoSlice } });
+const sagaMiddleware = createSagaMiddleware({});
 
-// 루트 리듀서의 반환값를 유추해줍니다
-// 추후 이 타입을 컨테이너 컴포넌트에서 불러와서 사용해야 하므로 내보내줍니다.
+const persistConfig = {
+  key: "root",
+  storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+const initialState = {};
+
+const store = configureStore({
+  reducer: persistedReducer,
+  middleware: [sagaMiddleware, logger],
+  devTools: true,
+  preloadedState: initialState,
+});
+
+sagaMiddleware.run(rootSaga);
+
+export default store;
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

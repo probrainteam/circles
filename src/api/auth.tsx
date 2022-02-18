@@ -1,4 +1,5 @@
 import axios from "axios";
+import { LoginInputData } from "types/authType";
 
 export const onRegister = (
   email: string,
@@ -16,17 +17,16 @@ export const onRegister = (
     });
 };
 
-export const onLogin = (email: string, pw: string) => {
-  axios
-    .post("/api/user/login", { email, pw })
-    .then((res) => {
-      console.log(res.data.token);
-      const { accessToken } = res.data.token;
-      axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
-    })
-    .catch((e) => {
-      console.log(e);
-    });
+export const onLogin = async ({ email, pw }: LoginInputData) => {
+  try {
+    const response = await axios.post("/api/user/login", { email, pw });
+    console.log(response);
+    const { accessToken } = response.data;
+    axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
+    return response;
+  } catch (e: any) {
+    return e.response;
+  }
 };
 
 export const onLogout = () => {};
