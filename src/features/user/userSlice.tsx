@@ -9,7 +9,7 @@ export interface UserState {
 
 const initialState: UserState = {
   circleName: "",
-  isLoggedIn: false,
+  isLoggedIn: true,
   status: 0,
   statusText: "loading",
 };
@@ -21,10 +21,16 @@ export const userSlice = createSlice({
     // login
     login: (state, action) => {},
     loginSuccess: (state, action) => {
-      state.status = action.payload?.status ?? 200;
-      state.statusText = action.payload?.statusText ?? "Success";
-      state.isLoggedIn = true;
-      state.circleName = action.payload.data?.circle;
+      state.status = action.payload?.status;
+      state.statusText = action.payload?.statusText;
+
+      if (action.payload?.status === 500) {
+        console.log("login error : code 500");
+        alert("로그인 실패했습니다.");
+      } else if (action.payload?.status === 200) {
+        state.isLoggedIn = true;
+        state.circleName = action.payload.data?.circle;
+      }
     },
     loginError: (state, action) => {
       state.status = action.payload ?? 500;

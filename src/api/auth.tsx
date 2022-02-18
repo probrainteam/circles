@@ -24,8 +24,8 @@ export const onLogin = async ({ email, pw }: LoginInputData) => {
     const { accessToken } = response.data;
     axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
     return response;
-  } catch (e) {
-    return e;
+  } catch (e: any) {
+    return e.response;
   }
 };
 
