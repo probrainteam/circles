@@ -9,6 +9,7 @@ export interface UserState {
 
 const initialState: UserState = {
   circleName: "",
+  // TODO : 이후 false로 변경
   isLoggedIn: true,
   status: 0,
   statusText: "loading",
