@@ -11,15 +11,33 @@ import axios from "axios";
 interface MemberManagementListProps {
   children: string;
 }
-
-function MemberManagementList({ memberList }: { memberList: Array<Object> }) {
+interface memberProps {
+  id: number;
+  approval: boolean;
+  name: string;
+  studentId: number;
+  phone: string;
+  grade: number;
+  isDues: boolean;
+  state: boolean;
+}
+function MemberManagementList({
+  memberList,
+}: {
+  memberList: Array<memberProps>;
+}) {
   const [selectionModel, setSelectionModel] = useState<GridSelectionModel>([]);
-
+  const [memberListData, setMemberListData] = useState(memberList);
+  useEffect(() => {
+    const MemberDataList = memberList.filter((item) => item.approval);
+    setMemberListData(MemberDataList);
+    return () => {};
+  }, [memberList]);
   return (
     <div>
       <MemberManageSearch />
       <DataTable
-        rows={memberList}
+        rows={memberListData}
         columns={columns}
         pageSize={10}
         rowsPerPageOptions={[5]}

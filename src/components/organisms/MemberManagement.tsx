@@ -43,7 +43,17 @@ const DonutOption1 = {
   },
   type: "donut",
 };
-function MemberManagement({ memberList }: { memberList: Array<Object> }) {
+interface memberProps {
+  id: number;
+  approval: boolean;
+  name: string;
+  studentId: number;
+  phone: string;
+  grade: number;
+  isDues: boolean;
+  state: boolean;
+}
+function MemberManagement({ memberList }: { memberList: Array<memberProps> }) {
   return (
     <ManagementContainer>
       <SectionTitle

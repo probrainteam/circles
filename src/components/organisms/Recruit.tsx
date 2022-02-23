@@ -8,9 +8,25 @@ import styled from "@emotion/styled";
 import { GridColDef, GridSelectionModel } from "@mui/x-data-grid";
 import DataTable from "components/atoms/DataTable";
 import axios from "axios";
-
-function Recruit({ memberList }: { memberList: Array<Object> }) {
+interface memberProps {
+  id: number;
+  approval: boolean;
+  name: string;
+  studentId: number;
+  phone: string;
+  grade: number;
+  isDues: boolean;
+  state: boolean;
+}
+function Recruit({ memberList }: { memberList: Array<memberProps> }) {
   const [selectionModel, setSelectionModel] = useState<GridSelectionModel>([]);
+  const [memberListData, setMemberListData] = useState(memberList);
+  useEffect(() => {
+    const newList = memberList.filter((item) => !item.approval);
+    console.log("new", newList);
+    setMemberListData(newList);
+    return () => {};
+  }, [memberList]);
   // 승인 버튼 클릭
   const handleApproveBtnClick = () => {
     console.log("승인버튼 클릭", selectionModel);
@@ -33,7 +49,7 @@ function Recruit({ memberList }: { memberList: Array<Object> }) {
           <DataTable
             selectionModel={selectionModel}
             setSelectionModel={setSelectionModel}
-            rows={memberList}
+            rows={memberListData}
             columns={columns}
             pageSize={5}
             rowsPerPageOptions={[5]}

@@ -17,11 +17,6 @@ function Manage() {
     axios
       .get(dummyUrl)
       .then((result) => {
-        //가지고 온 리스트를 state에 저장합니다.
-        // console.log(result.data);
-        // const newList = result.data.filter(
-        //   (item: { approval: boolean }) => !item.approval
-        // );
         setData(result.data);
       })
       .catch((error) => {
