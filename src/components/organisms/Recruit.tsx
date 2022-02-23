@@ -19,7 +19,6 @@ function Recruit() {
   }, []);
   const _getList = () => {
     const dummyUrl = "dummy/new_recruit.json";
-
     axios
       .get(dummyUrl)
       .then((result) => {

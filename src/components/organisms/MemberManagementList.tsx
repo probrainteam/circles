@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DataGrid, GridColDef, GridSelectionModel } from "@mui/x-data-grid";
 import styled from "@emotion/styled";
 import MemberManageSearch from "components/molecules/MemberManageSearch";
@@ -6,6 +6,7 @@ import Button from "components/atoms/Button";
 import { CopyIcon } from "components/atoms/Icons";
 import IconButton from "components/atoms/IconButton";
 import DataTable from "components/atoms/DataTable";
+import axios from "axios";
 
 interface MemberManagementListProps {
   children: string;
@@ -13,12 +14,29 @@ interface MemberManagementListProps {
 
 function MemberManagementList() {
   const [selectionModel, setSelectionModel] = useState<GridSelectionModel>([]);
-
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    // console.log("컴포넌트가 화면에 나타남");
+    _getList();
+    return () => {};
+  }, []);
+  const _getList = () => {
+    const dummyUrl = "dummy/memberList.json";
+    axios
+      .get(dummyUrl)
+      .then((result) => {
+        //가지고 온 리스트를 state에 저장합니다.
+        setData(result.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div>
       <MemberManageSearch />
       <DataTable
-        rows={rows}
+        rows={data}
         columns={columns}
         pageSize={10}
         rowsPerPageOptions={[5]}
