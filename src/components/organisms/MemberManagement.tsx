@@ -40,31 +40,10 @@ const DonutOption1 = {
       text: "undefined",
       align: "center",
     },
-    // dataLabels: {
-    //   enabled: true,
-    //   enabledOnSeries: undefined,
-    //   formatter: function (val: any, opts: any) {
-    //     return val;
-    //   },
-    // },
-
-    // responsive: [
-    //   {
-    //     breakpoint: 480,
-    //     options: {
-    //       chart: {
-    //         width: 200,
-    //       },
-    //       legend: {
-    //         position: "bottom",
-    //       },
-    //     },
-    //   },
-    // ],
   },
   type: "donut",
 };
-function MemberManagement() {
+function MemberManagement({ memberList }: { memberList: Array<Object> }) {
   return (
     <ManagementContainer>
       <SectionTitle
@@ -92,7 +71,7 @@ function MemberManagement() {
         />
       </ChartContainer>
       <ContentContainer title="회원관리">
-        <MemberManagementList></MemberManagementList>
+        <MemberManagementList memberList={memberList}></MemberManagementList>
       </ContentContainer>
     </ManagementContainer>
   );

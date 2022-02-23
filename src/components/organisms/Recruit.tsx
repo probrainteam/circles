@@ -9,30 +9,13 @@ import { GridColDef, GridSelectionModel } from "@mui/x-data-grid";
 import DataTable from "components/atoms/DataTable";
 import axios from "axios";
 
-function Recruit() {
+function Recruit({ memberList }: { memberList: Array<Object> }) {
   const [selectionModel, setSelectionModel] = useState<GridSelectionModel>([]);
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    // console.log("컴포넌트가 화면에 나타남");
-    _getList();
-    return () => {};
-  }, []);
-  const _getList = () => {
-    const dummyUrl = "dummy/new_recruit.json";
-    axios
-      .get(dummyUrl)
-      .then((result) => {
-        //가지고 온 리스트를 state에 저장합니다.
-        setData(result.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
   // 승인 버튼 클릭
   const handleApproveBtnClick = () => {
     console.log("승인버튼 클릭", selectionModel);
-    // setSelectionModel([]); //초기화
+
+    setSelectionModel([]); //초기화
   };
   // 거절 버튼 클릭
   const handleRejectBtnClick = () => {
@@ -50,7 +33,7 @@ function Recruit() {
           <DataTable
             selectionModel={selectionModel}
             setSelectionModel={setSelectionModel}
-            rows={data}
+            rows={memberList}
             columns={columns}
             pageSize={5}
             rowsPerPageOptions={[5]}
@@ -77,7 +60,6 @@ function Recruit() {
     </div>
   );
 }
-
 const DataTableContainer = styled.div`
   // margin: 32px 32px 0;
 `;
@@ -95,7 +77,7 @@ const columns: GridColDef[] = [
   { field: "studentId", headerName: "학번" },
   { field: "phone", headerName: "전화번호" },
   { field: "grade", headerName: "학년" },
-  { field: "isDues", headerName: "회비 여부" },
+  // { field: "isDues", headerName: "회비 여부" },
   { field: "state", headerName: "상태" },
 ];
 

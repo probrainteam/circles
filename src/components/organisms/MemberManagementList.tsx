@@ -12,31 +12,14 @@ interface MemberManagementListProps {
   children: string;
 }
 
-function MemberManagementList() {
+function MemberManagementList({ memberList }: { memberList: Array<Object> }) {
   const [selectionModel, setSelectionModel] = useState<GridSelectionModel>([]);
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    // console.log("컴포넌트가 화면에 나타남");
-    _getList();
-    return () => {};
-  }, []);
-  const _getList = () => {
-    const dummyUrl = "dummy/memberList.json";
-    axios
-      .get(dummyUrl)
-      .then((result) => {
-        //가지고 온 리스트를 state에 저장합니다.
-        setData(result.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+
   return (
     <div>
       <MemberManageSearch />
       <DataTable
-        rows={data}
+        rows={memberList}
         columns={columns}
         pageSize={10}
         rowsPerPageOptions={[5]}
@@ -84,7 +67,7 @@ const columns: GridColDef[] = [
   { field: "phone", headerName: "전화번호" },
   { field: "grade", headerName: "학년" },
   { field: "isDues", headerName: "회비 여부" },
-  { field: "state", headerName: "상태" },
+  { field: "state", headerName: "휴학 상태" },
 ];
 
 const rows = [
