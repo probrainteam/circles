@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SectionTitle from "../atoms/SectionTitle";
 import ApplicationFormCreate from "./ApplicationFormCreate";
 import ContentContainer from "components/atoms/ContentContainer";
@@ -7,10 +7,29 @@ import Button from "components/atoms/Button";
 import styled from "@emotion/styled";
 import { GridColDef, GridSelectionModel } from "@mui/x-data-grid";
 import DataTable from "components/atoms/DataTable";
+import axios from "axios";
 
 function Recruit() {
   const [selectionModel, setSelectionModel] = useState<GridSelectionModel>([]);
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    // console.log("컴포넌트가 화면에 나타남");
+    _getList();
+    return () => {};
+  }, []);
+  const _getList = () => {
+    const dummyUrl = "dummy/new_recruit.json";
 
+    axios
+      .get(dummyUrl)
+      .then((result) => {
+        //가지고 온 리스트를 state에 저장합니다.
+        setData(result.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   // 승인 버튼 클릭
   const handleApproveBtnClick = () => {
     console.log("승인버튼 클릭", selectionModel);
@@ -32,7 +51,7 @@ function Recruit() {
           <DataTable
             selectionModel={selectionModel}
             setSelectionModel={setSelectionModel}
-            rows={rows}
+            rows={data}
             columns={columns}
             pageSize={5}
             rowsPerPageOptions={[5]}
@@ -81,68 +100,68 @@ const columns: GridColDef[] = [
   { field: "state", headerName: "상태" },
 ];
 
-const rows = [
-  {
-    id: 1,
-    name: "변수미",
-    studentId: "2022000000",
-    phone: "01088884444",
-    grade: "2",
-    isDues: false,
-    state: "재학",
-  },
-  {
-    id: 2,
-    name: "전병민",
-    studentId: "2022000000",
-    phone: "01022225555",
-    grade: "4",
-    isDues: false,
-    state: "재학",
-  },
-  {
-    id: 3,
-    name: "최현석",
-    studentId: "2022000000",
-    phone: "01066667777",
-    grade: "3",
-    isDues: false,
-    state: "휴학",
-  },
-  {
-    id: 4,
-    name: "최현석",
-    studentId: "2022000000",
-    phone: "01066667777",
-    grade: "3",
-    isDues: false,
-    state: "휴학",
-  },
-  {
-    id: 5,
-    name: "최현석",
-    studentId: "2022000000",
-    phone: "01066667777",
-    grade: "3",
-    isDues: false,
-    state: "휴학",
-  },
-  {
-    id: 6,
-    name: "최현석",
-    studentId: "2022000000",
-    phone: "01066667777",
-    grade: "3",
-    isDues: false,
-    state: "휴학",
-  },
-  {
-    id: 7,
-    name: "최현석",
-    studentId: "2022000000",
-    phone: "01066667777",
-    grade: "3",
-    isDues: false,
-    state: "휴학",
-  },
-];
+// const rows = [
+//   {
+//     id: 1,
+//     name: "변수미",
+//     studentId: "2022000000",
+//     phone: "01088884444",
+//     grade: "2",
+//     isDues: false,
+//     state: "재학",
+//   },
+//   {
+//     id: 2,
+//     name: "전병민",
+//     studentId: "2022000000",
+//     phone: "01022225555",
+//     grade: "4",
+//     isDues: false,
+//     state: "재학",
+//   },
+//   {
+//     id: 3,
+//     name: "최현석",
+//     studentId: "2022000000",
+//     phone: "01066667777",
+//     grade: "3",
+//     isDues: false,
+//     state: "휴학",
+//   },
+//   {
+//     id: 4,
+//     name: "최현석",
+//     studentId: "2022000000",
+//     phone: "01066667777",
+//     grade: "3",
+//     isDues: false,
+//     state: "휴학",
+//   },
+//   {
+//     id: 5,
+//     name: "최현석",
+//     studentId: "2022000000",
+//     phone: "01066667777",
+//     grade: "3",
+//     isDues: false,
+//     state: "휴학",
+//   },
+//   {
+//     id: 6,
+//     name: "최현석",
+//     studentId: "2022000000",
+//     phone: "01066667777",
+//     grade: "3",
+//     isDues: false,
+//     state: "휴학",
+//   },
+//   {
+//     id: 7,
+//     name: "최현석",
+//     studentId: "2022000000",
+//     phone: "01066667777",
+//     grade: "3",
+//     isDues: false,
+//     state: "휴학",
+//   },
+// ];
