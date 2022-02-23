@@ -13,7 +13,7 @@ const ContentHeaderWrapper = styled.div`
   font-size: 1.6rem;
   color: #ffffff;
   background-color: #2d2d47;
-  padding: 3.2rem;
+  padding: 2.5rem;
 `;
 
 export default ContentHeader;
