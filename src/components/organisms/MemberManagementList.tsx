@@ -7,20 +7,12 @@ import { CopyIcon } from "components/atoms/Icons";
 import IconButton from "components/atoms/IconButton";
 import DataTable from "components/atoms/DataTable";
 import axios from "axios";
+import { memberProps } from "types/memberType";
 
 interface MemberManagementListProps {
   children: string;
 }
-interface memberProps {
-  id: number;
-  approval: boolean;
-  name: string;
-  studentId: number;
-  phone: string;
-  grade: number;
-  isDues: boolean;
-  state: boolean;
-}
+
 function MemberManagementList({
   memberList,
 }: {

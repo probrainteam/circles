@@ -8,16 +8,8 @@ import styled from "@emotion/styled";
 import { GridColDef, GridSelectionModel } from "@mui/x-data-grid";
 import DataTable from "components/atoms/DataTable";
 import axios from "axios";
-interface memberProps {
-  id: number;
-  approval: boolean;
-  name: string;
-  studentId: number;
-  phone: string;
-  grade: number;
-  isDues: boolean;
-  state: boolean;
-}
+import { memberProps } from "types/memberType";
+
 function Recruit({ memberList }: { memberList: Array<memberProps> }) {
   const [selectionModel, setSelectionModel] = useState<GridSelectionModel>([]);
   const [memberListData, setMemberListData] = useState(memberList);

@@ -5,6 +5,7 @@ import ContentContainer from "components/atoms/ContentContainer";
 import MemberManagementList from "./MemberManagementList";
 import Charts from "components/molecules/Charts";
 import RatioChart from "components/molecules/RatioChart";
+import { memberProps } from "types/memberType";
 const radialBarOption = {
   series: [70],
   options: {
@@ -43,16 +44,7 @@ const DonutOption1 = {
   },
   type: "donut",
 };
-interface memberProps {
-  id: number;
-  approval: boolean;
-  name: string;
-  studentId: number;
-  phone: string;
-  grade: number;
-  isDues: boolean;
-  state: boolean;
-}
+
 function MemberManagement({ memberList }: { memberList: Array<memberProps> }) {
   return (
     <ManagementContainer>
