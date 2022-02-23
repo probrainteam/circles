@@ -7,17 +7,13 @@ import { CopyIcon } from "components/atoms/Icons";
 import IconButton from "components/atoms/IconButton";
 import DataTable from "components/atoms/DataTable";
 import axios from "axios";
-import { memberProps } from "types/memberType";
+import { memberFuncProps } from "types/memberType";
 
 interface MemberManagementListProps {
   children: string;
 }
 
-function MemberManagementList({
-  memberList,
-}: {
-  memberList: Array<memberProps>;
-}) {
+function MemberManagementList({ memberList, setMemberList }: memberFuncProps) {
   const [selectionModel, setSelectionModel] = useState<GridSelectionModel>([]);
   const [memberListData, setMemberListData] = useState(memberList);
   useEffect(() => {

@@ -8,3 +8,7 @@ export interface memberProps {
   isDues: boolean;
   state: boolean;
 }
+export interface memberFuncProps {
+  memberList: Array<memberProps>;
+  setMemberList?: React.Dispatch<React.SetStateAction<never[]>>;
+}

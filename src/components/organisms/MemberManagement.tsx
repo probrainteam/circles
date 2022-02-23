@@ -5,7 +5,7 @@ import ContentContainer from "components/atoms/ContentContainer";
 import MemberManagementList from "./MemberManagementList";
 import Charts from "components/molecules/Charts";
 import RatioChart from "components/molecules/RatioChart";
-import { memberProps } from "types/memberType";
+import { memberFuncProps } from "types/memberType";
 const radialBarOption = {
   series: [70],
   options: {
@@ -45,7 +45,7 @@ const DonutOption1 = {
   type: "donut",
 };
 
-function MemberManagement({ memberList }: { memberList: Array<memberProps> }) {
+function MemberManagement({ memberList, setMemberList }: memberFuncProps) {
   return (
     <ManagementContainer>
       <SectionTitle
@@ -73,7 +73,10 @@ function MemberManagement({ memberList }: { memberList: Array<memberProps> }) {
         />
       </ChartContainer>
       <ContentContainer title="회원관리">
-        <MemberManagementList memberList={memberList}></MemberManagementList>
+        <MemberManagementList
+          memberList={memberList}
+          setMemberList={setMemberList}
+        ></MemberManagementList>
       </ContentContainer>
     </ManagementContainer>
   );

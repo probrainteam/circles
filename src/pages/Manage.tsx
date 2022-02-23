@@ -7,9 +7,7 @@ import { useEffect, useState } from "react";
 
 function Manage() {
   const [data, setData] = useState([]);
-  const [memberData, setMemberData] = useState([]);
   useEffect(() => {
-    // console.log("컴포넌트가 화면에 나타남");
     _getList();
     return () => {};
   }, []);
@@ -26,8 +24,8 @@ function Manage() {
   };
   return (
     <Layout>
-      <Recruit memberList={data} />
-      <MemberManagement memberList={data} />
+      <Recruit memberList={data} setMemberList={setData} />
+      <MemberManagement memberList={data} setMemberList={setData} />
     </Layout>
   );
 }
