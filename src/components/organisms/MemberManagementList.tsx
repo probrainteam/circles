@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DataGrid, GridColDef, GridSelectionModel } from "@mui/x-data-grid";
 import styled from "@emotion/styled";
 import MemberManageSearch from "components/molecules/MemberManageSearch";
@@ -6,19 +6,26 @@ import Button from "components/atoms/Button";
 import { CopyIcon } from "components/atoms/Icons";
 import IconButton from "components/atoms/IconButton";
 import DataTable from "components/atoms/DataTable";
+import axios from "axios";
+import { memberFuncProps } from "types/memberType";
 
 interface MemberManagementListProps {
   children: string;
 }
 
-function MemberManagementList() {
+function MemberManagementList({ memberList, setMemberList }: memberFuncProps) {
   const [selectionModel, setSelectionModel] = useState<GridSelectionModel>([]);
-
+  const [memberListData, setMemberListData] = useState(memberList);
+  useEffect(() => {
+    const MemberDataList = memberList.filter((item) => item.approval);
+    setMemberListData(MemberDataList);
+    return () => {};
+  }, [memberList]);
   return (
     <div>
       <MemberManageSearch />
       <DataTable
-        rows={rows}
+        rows={memberListData}
         columns={columns}
         pageSize={10}
         rowsPerPageOptions={[5]}
@@ -66,7 +73,7 @@ const columns: GridColDef[] = [
   { field: "phone", headerName: "전화번호" },
   { field: "grade", headerName: "학년" },
   { field: "isDues", headerName: "회비 여부" },
-  { field: "state", headerName: "상태" },
+  { field: "state", headerName: "휴학 상태" },
 ];
 
 const rows = [
