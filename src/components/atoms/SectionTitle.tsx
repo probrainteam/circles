@@ -1,22 +1,27 @@
 import styled from "@emotion/styled";
-import { ReactNode } from "react";
+
 interface TitleProps {
-  // children: ReactNode;
   className?: string;
-  mainTitle : string;
-  subTitle : string;
+  mainTitle: string;
+  subTitle: string;
 }
-function SectionTitle({mainTitle,subTitle}:TitleProps) {
-  return <div>
-    <MainTitle>{mainTitle}</MainTitle>
-    <SubTitle>{subTitle}</SubTitle>
-  </div>;
+function SectionTitle({ mainTitle, subTitle }: TitleProps) {
+  return (
+    <div>
+      <MainTitle>{mainTitle}</MainTitle>
+      <SubTitle>{subTitle}</SubTitle>
+    </div>
+  );
 }
+
 const MainTitle = styled.div`
-  font-size : 40px;
+  font-size: 40px;
+  font-weight: 500;
 `;
+
 const SubTitle = styled.div`
-font-size : 24px;
- 
+  font-size: 24px;
+  font-weight: 200;
 `;
+
 export default SectionTitle;

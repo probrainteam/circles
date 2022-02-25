@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import styled from "@emotion/styled";
 import ContentHeader from "components/atoms/ContentHeader";
 
@@ -16,6 +16,7 @@ function ContentContainer({ children, title }: ContentBoxProps) {
     </ContentBoxWrapper>
   );
 }
+
 const ContentBoxWrapper = styled.div`
   height: 100%;
   position: relative;
@@ -23,12 +24,13 @@ const ContentBoxWrapper = styled.div`
   box-shadow: 4px 12px 30px 6px rgba(0, 0, 0, 0.09);
   display: flex;
   flex-direction: column;
-  margin: 25px 0;
+  margin: 4rem 0;
 `;
+
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  // gap: 32px;
   padding: 32px;
 `;
+
 export default ContentContainer;

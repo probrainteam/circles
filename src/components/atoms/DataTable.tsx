@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "@emotion/styled";
 
 import {
@@ -6,7 +5,7 @@ import {
   GridColDef,
   GridInputSelectionModel,
 } from "@mui/x-data-grid";
-import { css } from "@emotion/react";
+
 interface DataTableProps {
   selectionModel: GridInputSelectionModel;
   setSelectionModel: Function;
@@ -16,6 +15,7 @@ interface DataTableProps {
   rowsPerPageOptions: Array<number>;
   className?: string;
 }
+
 function DataTable({
   rows,
   columns,
@@ -43,12 +43,19 @@ function DataTable({
 }
 
 export default DataTable;
+
 interface TableContainerProps {
   pageSize: number;
   children: any;
 }
+
 const TableContainer = styled.div<TableContainerProps>`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
   height: ${({ pageSize }) => pageSize * 60 + 70}px;
+  width: 100%;
   & > .MuiDataGrid-root {
     font-size: 14px;
     text-align: center;

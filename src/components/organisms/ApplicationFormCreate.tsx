@@ -1,6 +1,6 @@
+import { useState } from "react";
 import Button from "components/atoms/Button";
 import Input from "components/atoms/Input";
-import React, { useRef, useState } from "react";
 import styled from "@emotion/styled";
 import { CopyIcon } from "components/atoms/Icons";
 import { doCopy } from "utils/copy";
@@ -12,11 +12,13 @@ function ApplicationFormCreate() {
     console.log("가입신청서 만들기 button click");
     setApplicationFormUrl("http://localhost:3000/manage");
   };
+
   const handleCopyClick = () => {
     if (applicationFormUrl !== "") {
       doCopy(applicationFormUrl);
     }
   };
+
   return (
     <ApplicationFormContainer>
       <ButtonContainer>
@@ -43,16 +45,18 @@ function ApplicationFormCreate() {
   );
 }
 const ApplicationFormContainer = styled.div`
-  margin: 25px 0;
+  margin: 4rem 0;
   display: flex;
-  gap: 10px;
+  gap: 1rem;
   align-items: center;
 `;
+
 const IconContainer = styled.div`
   &:hover {
     cursor: pointer;
   }
 `;
+
 const ButtonContainer = styled.div``;
 const InputContainer = styled.div`
   flex-grow: 1;

@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import axios from "axios";
 import MemberManagement from "components/organisms/MemberManagement";
 import Recruit from "components/organisms/Recruit";
@@ -29,12 +28,5 @@ function Manage() {
     </Layout>
   );
 }
-
-const ManageWrapper = styled.div`
-  display: flex;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-`;
 
 export default Manage;
